@@ -34,7 +34,7 @@ The following notebooks use [sagemath](https://sagemath.org) kernel. You can dow
 
 ## Mathematica 
 
-The following notebooks use [mathematica](https://www.wolfram.com/mathematica) kernel. If you have a license for mathematica, you can download either the nb files and open them. Else, you can download the cdf files and open them in [Wolfram Player for Notebooks](https://www.wolfram.com/player). You can view the pdf files to see what is in there.
+The following notebooks use [mathematica](https://www.wolfram.com/mathematica) kernel. If you have a license for mathematica, you can download the nb files and open them. Else, you can download the cdf files and open them in [Wolfram Player for Notebooks](https://www.wolfram.com/player). You can view the pdf files to see what is in there.
 
 # Further learning
 
