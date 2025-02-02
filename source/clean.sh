@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 # script to clean up temporary files after latex
+# reference https://github.com/gphanikumar/tpnotes
 # -------------------------------------------------------
 echo "Cleaning up..."
 arg=${1:-.}
