@@ -12,6 +12,16 @@ Download the [TransportPhenomena.pdf](./TransportPhenomena.pdf) and use it as a 
 
 You can clone or fork this repo, edit the source files as you wish and use it for your course. If you have suggestions to improve the content, please feel free to send a pull request. Please make sure your github profile shows your identity to make this process faster.
 
+The process to compile the notes is as follows:
+    git clone https://github.com/gphanikumar/tpnotes.git
+    cd tpnotes/source
+    make
+
+When the compilation is successful you can make the pdf.
+
+    make all
+    make clean
+
 ## Collaborators
 
 If you wish to make significant contributions to this repository, you are welcome as a collaborator. Drop me a line email and I will add you here so that you can push the changes to this repo yourself.
