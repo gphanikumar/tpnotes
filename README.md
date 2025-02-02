@@ -35,9 +35,9 @@ The following notebooks use [sagemath](https://sagemath.org) kernel. You can dow
 
 * Characteristic Polynomial [ipynb](sage-notebooks/CharacteristicPolynomial.ipynb)
 * Planar Flows [ipynb](sage-notebooks/PlanarFlows.ipynb)
-* Vector Field Plots [ipynb](sagenotebooks/VectorFieldPlots.ipynb)
-* Continuity equation in Cylindrical coordinate system [ipynb](sagenotebooks/ContinuityCylindrical.ipynb)
-* Continuity equation in Spherical coordinate system [ipynb](sagenotebooks/ContinuitySpherical.ipynb)
+* Vector Field Plots [ipynb](sage-notebooks/VectorFieldPlots.ipynb)
+* Continuity equation in Cylindrical coordinate system [ipynb](sage-notebooks/ContinuityCylindrical.ipynb)
+* Continuity equation in Spherical coordinate system [ipynb](sage-notebooks/ContinuitySpherical.ipynb)
 
 
 ## Mathematica 
