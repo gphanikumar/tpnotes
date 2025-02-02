@@ -33,6 +33,8 @@ If you wish to make significant contributions to this repository, you are welcom
 
 The following notebooks use [sagemath](https://sagemath.org) kernel. You can download the ipynb file to your computer and open it in the jupyter notebook interface to play with it. Toggle the option "trust" to ensure the notebook is rendered properly.
 
+* Characteristic Polynomial [ipynb](sage-notebooks/characteristicpolynomial.ipynb)
+
 ## Mathematica 
 
 The following notebooks use [mathematica](https://www.wolfram.com/mathematica) kernel. If you have a license for mathematica, you can download the nb files and open them. Else, you can download the cdf files and open them in [Wolfram Player for Notebooks](https://www.wolfram.com/player). You can view the pdf files to see what is in there.
