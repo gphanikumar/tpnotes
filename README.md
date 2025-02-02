@@ -48,13 +48,17 @@ The following notebooks use [mathematica](https://www.wolfram.com/mathematica) k
 
 ## sagemath
 
-* SageMath has extensive [documentation](https://doc.sagemath.org/)
+* SageMath has extensive [documentation](https://doc.sagemath.org/) and [library](https://www.sagemath.org/library.html)
 * Lectures hosted by IMSc: [SageMath for Educators](https://ekalavya.imsc.res.in/node/3991), [Introduction to SageMath](https://ekalavya.imsc.res.in/node/3990) and [Interactive visualization in SageMath](https://ekalavya.imsc.res.in/node/3994)
-* Course on [Computational Mathematics with SageMath](https://archive.nptel.ac.in/courses/111/106/111106149/) by Prof. Ajit Kumar, ICT Mumbai
+* NPTEL Course on [Computational Mathematics with SageMath](https://archive.nptel.ac.in/courses/111/106/111106149/) by Prof. Ajit Kumar, ICT Mumbai
 * A book on [Sage for undergraduates](http://gregorybard.com/Sage.html) by Gregory Bard
+* A book on [Computational Mathematics with SageMath](https://www.sagemath.org/sagebook/english.html) by Paul Zimmermann et al.
 * Few notebooks as part of the course on [Introduction to scientific computing](https://github.com/gphanikumar/mm2090)
 
 ## computational fluid dynamics
+
+* NPTEL course on [Computational Fluid Dynamics using Finite Volume Method](https://archive.nptel.ac.in/courses/112/106/112106294/) by Prof. Anupindi Kameswararao, IIT Madras
+
 ## openfoam
 
 # Disclaimer
