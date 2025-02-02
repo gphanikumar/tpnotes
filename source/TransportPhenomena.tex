@@ -1,0 +1,138 @@
+\documentclass[a4paper,12pt,openany,ans]{book}
+%\usepackage{calligra}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amsthm, thmtools}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{makeidx}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[load-configurations=abbreviations]{siunitx}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{exsheets}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.5em}
+
+\include{header-boxes}
+
+\author{Gandham Phanikumar \\
+Professor, Department of Metallurgical and Materials Engineering\\
+Indian Institute of Technology Madras\\
+Chennai 600036 INDIA\\
+{e-mail: \tt gphani@iitm.ac.in}\\
+{url: \tt http://gphanikumar.github.io}\\
+\vspace{1 in}\\
+{Course website: \tt https://courses.iitm.ac.in/}
+}
+
+\title{Transport Phenomena in Materials}
+
+\include{header-fancy}
+
+
+\makeindex
+
+\begin{document}
+
+\include{header-thm}
+
+
+\thispagestyle{empty}
+
+\include{myunits}
+
+\maketitle
+
+\pagenumbering{arabic}
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\renewcommand{\listtheoremname}{List of Learning Objectives}
+\listoftheorems
+
+\include{list-symbols}
+
+\newpage
+
+%\pagenumbering{arabic}
+
+% -------------------------------
+% Introduction to Tensors
+% -------------------------------
+\include{c01-intro}
+\include{c02-SubscriptNotation1}
+\include{c03-SubscriptNotation2}
+\include{c04-CoordinateTransforms}
+\include{c05-TensorIntro}
+\include{c06-TensorSymmetry}
+% -------------------------------
+% Fluid Flow
+% -------------------------------
+\include{c07-continuity}
+\include{c08-planarflow}
+\include{c09-momentum}
+\include{c10-nsderive2}
+\include{c10-NSCylindrical}
+\include{c11-momcases-planar}
+\include{c12-momcases-cyl}
+\include{c13-creepingflow}
+\include{c13-porousmedium}
+\include{c14-FrictionFactors}
+% -------------------------------
+% Heat Transfer
+% -------------------------------
+\include{c15-heat}
+\include{c16-heatcases1}
+\include{c17-heatcases2}
+\include{c18-convheat}
+% -------------------------------
+% Mass Transfer
+% -------------------------------
+\include{c19-mass1}
+\include{c19-mass1a}
+\include{c19-mass2}
+\include{c20-DiffusionSolutions}
+\include{c21-MassTransferSolutions}
+% -------------------------------
+% Similarity
+% -------------------------------
+\include{c22-similarity}
+% -------------------------------
+
+% We can enable this after masking [print] option for solutions 
+% within text -Phani, 20-07-2019
+%\include{solutions}
+
+\include{qmaps}
+
+\include{appendix01}
+\include{appendix02}
+\include{appendix03}
+\include{appendix04}
+\include{appendix05}
+\include{appendix06}
+\include{appendix07}
+\include{appendix08}
+\include{appendix09}
+\include{appendix10}
+\include{appendix11}
+\include{appendix12}
+\include{appendix13}
+\include{appendix14}
+
+\bibliography{refs}
+
+\bibliographystyle{apalike}
+
+\printindex
+\end{document}

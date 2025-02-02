@@ -1,0 +1,48 @@
+\SetupExSheets{counter-format=ch.se.qu}
+
+% ----------------------------------------------
+% setup rounded boxes for questions, answers and
+% scaffolds 
+%
+  \mdfsetup{
+    innertopmargin=5pt,
+    innerbottommargin=5pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    leftmargin=5pt,
+    rightmargin=5pt,
+    splitbottomskip=2pt,
+    splittopskip=2pt,
+    topline=true,
+    leftline=true,
+    bottomline=true,
+    rightline=true,
+    linewidth=1pt,
+    innerlinewidth=0pt,
+    font=\normalfont,
+    roundcorner=5pt
+  }
+
+\global\mdfdefinestyle{tpqtype1}{linecolor=red}
+\global\mdfdefinestyle{tpanstype1}{linecolor=green}
+\global\mdfdefinestyle{tpscaffold1}{linecolor=blue}
+\global\mdfdefinestyle{lobj}{linecolor=Purple}
+
+% -------------------------------------------------
+
+\SetupExSheets{
+	solution/pre-hook = {\begin{mdframed}[style=tpanstype1]},
+	solution/post-hook = {\end{mdframed}}
+}
+\SetupExSheets{
+	question/pre-hook = {\begin{mdframed}[style=tpqtype1]},
+	question/post-hook = {\end{mdframed}}
+}
+
+% --------------------------------------------------------------------
+% Declare some properties to questions for collating them later
+\DeclareQuestionProperty{Exams}
+\DeclareQuestionProperty{LearningObjectives}
+\DeclareQuestionProperty{References}
+% --------------------------------------------------------------------
+

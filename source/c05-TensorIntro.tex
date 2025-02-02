@@ -1,0 +1,369 @@
+\chapter{Introduction to Cartesian Tensors}
+\label{ch:tensintro}
+
+\section{Cartesian Tensors}
+
+% learning objective
+\begin{lo1}[Tensor introduction]
+Recall the definitions of tensors and their order.
+\end{lo1}
+
+
+Many entities, such as those that have a physical meaning, are independent of the co-ordinate system we choose to represent them.  If $n$ is the dimension of the space we are concerned, the entities can be classifed - according to the number of components $(n^i)$ they would have - as {\bf tensors} of order $i$. 
+
+\fbox{ %begin minipage frame
+\begin{minipage}{4 in}
+In this notes, when we say tensor, we imply Cartesian tensor. We don't want to get into covariant, contravariant and such things at this stage.
+\end{minipage}
+} % end of minipage frame
+
+
+
+\subsection{Scalar}
+Scalar is a tensor of order zero. Only one value would suffice to describe it at any location. Scalars are invariant under co-ordinate transformations.
+
+{\bf Definition:} Scalar is an entity that remains invariant under all co-ordinate transformations.
+
+Eg: Temperature $T$, Composition of - say - $A$ species $C_A$, Pressure in a fluid $p$, Density $\rho$, etc., 
+
+\subsection{Vector}
+Vector is a tensor of order one. It requires as many values / components as the dimension of the space (which is three for most of us) ie., a set of three components in a 3D space. 
+
+{\bf Definition:} Vector is an entity that transforms the following way under a co-ordinate transformation: 
+\begin{equation}
+a^*_p = T_{pi}a_i
+\end{equation} 
+
+Eg: Velocity of fluid $\vec{u} = u_i$, Temperature gradient $\partial T \over \partial x_i$, Composition gradient $\partial C_A \over \partial x_i$, Displacement $u_i$, Electric Potential difference $P$, Electric Current $J_i$ etc.,
+
+\subsection{Bisor}
+Bisor is a tensor of order two. All tensors of order 2 or more are called as just {\bf tensors}. Specific names for tensors of order 2 and above are often considered old fashioned. A tensor of order 2 requires 9 components to describe it in general in 3D. 
+
+{\bf Definition:} Tensor of order two is an entity that transforms the following way under a co-ordinate transformation: 
+\begin{equation}
+a^*_{pq} = T_{pi}T_{qj}a_{ij}
+\end{equation} 
+
+Eg: Stress $\sigma_{ij}$, Strain $e_{ij}$, Electrical Conductivity $\sigma_{ij}$, Electrical Resistivity $\rho_{ij}$, Diffusivity $D_{ij}$, Thermal Conductivity $k_{ij}$, Magnetic Permeability $\mu_{ij}$, Dielectric Permittivity $\epsilon_{ij}$, Thermal Expansion Coefficient $\alpha_{ij}$, Gyration Tensor $g_{ij}$
+
+\subsection{Trisor}
+
+Trisor is a tensor of order three. 27 components! 
+
+{\bf Definition:} Tensor of order three is an entity that transforms the following way under a co-ordinate transformation: 
+\begin{equation}
+a^*_{pqr} = T_{pi}T_{qj}T_{rk}a_{ijk}
+\end{equation} 
+
+Eg: Piezoelectric coefficient $e_{ijk}$, 
+
+\subsection{Tetror}
+
+Tetror is a tensor of order four. 81 components! 
+\begin{equation}
+a^*_{pqrs} = T_{pi}T_{qj}T_{rk}T_{sl} a_{ijkl}
+\end{equation}
+
+Eg: Elastic Modulus $c_{ijkl}$
+
+\subsection{Tensor}
+
+\index{Tensor}
+
+In general, a tensor is an entity that follows the following generalised rule for any co-ordinate transformation. The number of indices of $a$ indicate the order of the tensor which is the same as the number of times $T$ occurs in the expression.
+
+\begin{equation}
+\boxed{a^*_{pqrst...} = T_{pi}T_{qj}T_{rk}T_{sl}T_{tm}... a_{ijklm...} }
+\end{equation}
+
+% learning objective
+\begin{lo2}[Tensor Introduction]
+Validate a tensorial expression and identify the tensorial order of a parameter
+\end{lo2}
+
+Here we must bring in some examples.
+
+
+\section{Operations on tensors}
+
+\index{Tensor operations}
+
+\begin{itemize}
+
+\item Sum and difference of two tensors (of same order) is also a tensor. In the following example, if $b_{ij}$ and $c_{ij}$ are tensors, then $a_{ij}$ and $d_{ij}$ are also tensors.
+$$ a_{ij} = b_{ij} + c_{ij} $$
+$$ d_{ij} = b_{ij} - c_{ij} $$
+
+\index{Dyadic product}
+\item An outer product of a tensor of order $m$  with a tensor of order $n$ will give a tensor of order $m+n$. Outer product is also referred to as dyadic product.
+$$a_{ijk} = b_{ij}c_{k}$$
+
+\item An inner product of a tensor of order $m$ with a tensor of order $n$ will give a tensor of order $|m-n|$.
+$$a_{i} = b_{ijk}c_{jk}$$
+
+\index{Contraction theorem}
+\item {\bf Contraction theorem}\label{contraction} \index{Contraction theorem} : If $a_{ijkl..}$ is a tensor of order $m$, then the entity obtained by repeating any two subscripts is a tensor of order $m-2$. Eg., if $d_{ijkl}$ is a tensor of order 4, then by repeating two of its indices (say, third and fourth), the entity obtained $a_{ij}$ is a tensor of order $4-2=2$.
+$$ a_{ij} = d_{ijkk}$$
+
+
+A corollary to the above theorem is obtained when we take a tensor of order two and repeat the indices. i.e., Trace of a second order tensor $a_{ii}$ is tensor of order zero or scalar or invariant across co-ordinate transformations.
+
+
+\item {\bf Quotient law of tensors} \index{Quotient law}: If there is an entity representable by (subscript notation as) $a_{ij}$ relative to any cartesian co-ordinate system and if $a_{ij}b_i$ is a {\em vector} where $b_i$ is {\em any arbitrary vector} then $a_{ij}$ is a {\em tensor} of order two. Proof is given in section \ref{quotientrule}.
+
+Combining with the theorem on outer product, quotient law can be extended to tensors of higher order.
+
+
+\end{itemize}
+
+
+\section{Types of tensors}
+
+\subsection{Symmetric Tensor}
+\index{Tensor, symmetric}
+
+$a$ is a {\em symmetric} tensor if $a_{ij} = a_{ji}$
+
+{\bf Theorem}: For every second order symmetric tensor, there exists a co-ordinate system relative to which, the matrix of the components of the tensor is diagonal \footnote{This theorem has important implications when applied to the stress tensor in the mechanical behaviour of materials. The diagonal terms are called principal stresses.}. Proof is given in section \ref{diagonalisable}.
+
+\subsection{Anti-symmetric Tensor}
+\index{Tensor, anti-symmetric}
+
+$a$ is a {\em skew-symmetric} or {\em anti-symmetric} tensor if $a_{ij} = -a_{ji}$
+
+The vector formed by the components of an anti-symmetric tensor:
+
+$$
+\omega_k = \left( 
+\begin{array}{l}
+\omega_1\\
+\omega_2 \\ 
+\omega_3
+\end{array} 
+\right)
+$$
+
+$$ \Omega_{ij} =  \left(
+\begin{array}{ccc}
+0 & \omega_3 & -\omega_2 \\
+-\omega_3 & 0 & \omega_1 \\
+\omega_2 & -\omega_1 & 0
+\end{array} 
+\right)
+$$
+
+$$\omega_k = \frac{1}{2} \epsilon_{kij} \Omega_{ij} $$
+Also,
+$$\Omega_{ij} = \epsilon_{ijk}\omega_{k}$$
+
+\index{Dual tensors}
+The two tensors $\omega_k$ and $\Omega_{ij}$ are called dual tensors.
+
+{\bf Theorem}: Every second order tensor is expressible as a sum of a symmetric tensor and an anti-symmetric tensor. 
+
+\begin{equation}
+a_{ij} = \frac{1}{2}\left( a_{ij}+a_{ji}\right) + \frac{1}{2}\left( a_{ij}-a_{ji}\right) 
+\end{equation} 
+
+
+
+% ---------------------------------------------------------------------
+
+% learning objective
+\begin{lo2}[Tensor introduction]
+Prove an expression to be a tensor of appropriate order using the definition of a tensor
+\end{lo2}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+Prove that gradient of a continuous scalar function is a vector. 
+\begin{equation}
+a_i = \nabla_i\phi = \frac{\partial \phi}{\partial x_i}
+\end{equation} 
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+Prove that the magnitude of a vector is invariant under co-ordinate transformations.
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+Prove that $\delta_{ij}$ is (an isotropic) tensor of order two.
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+Prove that if $u_i$ and $v_j$ are vectors, then the dyad $a_{ij} = u_i v_j$ is a tensor of order two.
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+(Exercise 2.42.1 of \cite{aris}) Prove that for any vector $\vec{a}$, $\epsilon_{ijk}a_k$ are the components of a second order tensor.
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+(Exercise 2.42.3 and 2.44.2 of \cite{aris}) If $r^2 = x_k x_k$ and $f(r)$ is any twice differentiable function, show that the following nine derivatives are components of a tensor.
+$$\left[ f''(r) -{f'(r) \over r} \right] {x_i x_j \over r^2} + {f'(r) \over r} \delta_{ij} $$.
+Show also that the trace of that tensor is the following.
+$${1 \over r^2}{d \over dr} \left( r^2 {df \over dr} \right)$$
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+Prove that strain rate or velocity gradient is a tensor of order two.
+$$ e_{ij} = {\partial u_i \over \partial x_j}$$
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+If $\sigma_{ij}$ is a tensor, prove that $\sigma_{ii}$, the trace of the matrix of $\sigma_{ij}$ is invariant under co-ordinate transformations. \footnote{This quantity has a special meaning in mechanical behaviour of materials.}
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+Prove that $\epsilon_{ijk}$ is a tensor of order three. Clue: Use the subscript notation for determinant of the transformation matrix. When two rows of a matrix are same, the determinant vanishes.
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+Prove that the dyad $\delta_{ij}\delta_{kl}$ is (an isotropic) tensor of order four. Considering that $\delta_{ij}$ is an isotropic and hence a symmetric tensors, how many combinations of the four indices can you get so that you can arrive at possible isotropic tensors of order four.
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+If $a_{ij}$ and $b_{kl}$ are tensors of order two, prove that the dyad $a_{ij} b_{kl}$ is a tensor of order four. Prove that $a_{ij} b_{jk}$ is a tensor of order two. Also, that $a:b = a_{ij}b_{ji}$ is a scalar.
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+% ---------------------------------------------------------------------
+
+\begin{question}
+Use the Neumann's principle to prove that the number of components necessary to describe the thermal conductivity of a tetragonal crystal is two. You can assume that the thermal conductivity is a symmetric tensor to start with, thanks to Onsager's theory~\cite{onsager1, onsager2}.
+\end{question}
+\begin{solution}[print]
+\end{solution}
+
+
+\begin{center}
+{\bf \Large Tensor Properties}
+\end{center}
+
+\begin{enumerate}{}{}
+
+\item If $a_{ij}$ and $b_{ij}$ are two tensors of order 2, then write the order / rank and list the free indices for each of the following quantities.
+
+\begin{tabular}{| c | c | m{1 in} | m{1 in} |}
+\hline
+ Sl. & Expression & Order / Rank & Free Indices \\[1 cm]
+\hline
+1 & $a_{ij} b_{jk}$ & & \\[1 cm]
+\hline
+2 & $a_{ij} b_{ik}$ & & \\[1 cm]
+\hline
+3 & $a_{ij} b_{kj}$ & & \\[1 cm]
+\hline
+4 & $a_{ij} b_{ij}$ & & \\[1 cm]
+\hline
+5 & $a_{ij} b_{ji}$ & & \\[1 cm]
+\hline
+6 & $a_{ji} b_{ij}$ & & \\[1 cm]
+\hline
+7 & $a_{ij} b_{ki}$ & & \\[1 cm]
+\hline
+8 & $a_{ij} b_{kl}$ & & \\[1 cm]
+\hline
+\end{tabular}
+
+\item In the above list of expressions, which of the above qualifies as a matrix multiplication the way you knew it?
+
+\item Consider the above expressions are contraction operations on $d_{ijkl}$ where $d_{ijkl} = a_{ij} b_{kl}$. List which expression is a contraction operation over which of the indices of $d$.
+
+\item In the above list of expressions, are all the second order tensorial quantities identical?
+
+\item The elements of a vector $\vec{a}$ in the new coordinate system after rotation from an old coordinate system are given as follows. Here, $T_{pi}$ indicates the transformation matrix corresponding to the rotation of axes. 
+$$ a^*_p = T_{pi} \, a_i$$ 
+Show that the components of this vector $\vec{a}$ in the old coordinate system in terms of the new coordinate system can be given by the following equation.
+$$ a_i = T_{pi} \, a^*_p$$ 
+
+\item If $b_i$ is any vector and $a_{ij}$ is a matrix of nine numbers and if a relation could be found such that $a_{ij} b_i = c_j$ is always a vector, then show that $a_{ij}$ is a tensor.\\
+Hint: Start with definition of $b_i$ and $c_j$ being vectors. Apply the relation connecting them across a coordinate transformation. The result you obtain is called as the Quotient Rule.
+
+\item Show that $\delta_{ij}$ is an isotropic tensor of order 2. That is, the elements of $\delta_{ij}$ do not change for {\bf any} arbitrary rotation of the coordinate system.\\
+Hint: Use the subscript replacement ability of Kronecker delta and the orthogonality condition for a transformation matrix.
+
+\item Show that $\epsilon_{ijk}$ is an isotropic tensor of order 3.\\
+Hint: Use the formula for determinant of a matrix using the permutation symbol.
+
+\item Show that $\delta_{ij} \delta_{kl}$ is an isotropic tensor of order 4. Show that the other two combination of indices will also give the same conclusion. Show that a linear combination of these three fourth order isotropic tensors is also an isotropic tensor of order four.
+
+\end{enumerate}
+
+
+{\bf To ponder / home work}
+
+\begin{enumerate}
+\item What can you recall about eigenvectors and eigenvalues for a $3 \times 3$ matrix?
+\item If $A$ is a $3 \times 3$ matrix and $\delta_{ij}$ is the identity matrix, write down the determinant of the matrix $\left| A - \lambda \delta_{ij} \right|$. The cubic polynomial in $\lambda$ you obtain is called the characteristic polynomial and the equation that equals this polynomial to zero is called {\bf secular} equation or characteristic equation of a tensor of order two.
+\index{Secular equation}
+\index{Characteristic equation}
+\item Collate the coefficients of $\lambda^3$, $\lambda^2$ and $\lambda$ in the above expression.
+\item Write each of these coefficient expressions in subscript notation.
+\item Is it right to say that each of these coefficients are invariant under rotation of coordinate system?
+\end{enumerate}
+
+% learning objective
+\begin{lo2}[Tensor components]
+\item Determine the components of a second order tensor after rotation of coordinate systems given the transformation matrix
+\end{lo2}
+
+Give some examples here
+
+% learning objective
+\begin{lo2}[Tensor components]
+\item Determine unknown components of a tensor of second order by using the invariants
+\end{lo2}
+
+Give some examples here
+
+\section{Summary}
+
+\begin{enumerate}
+\item 
+\item 
+\end{enumerate}
+
+% --------- end of TensorIntro.tex --------------------------------

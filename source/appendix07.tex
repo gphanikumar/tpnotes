@@ -1,0 +1,54 @@
+\section{Dilation}
+\label{materialderivative}
+
+This section is adapated from section 4.21 of \cite{aris}. Consider the following process to arrive at differentiation noting that $\left( \xi_1, \xi_2, \xi_3 \right)$ refers to {\em convected} coordinates:
+
+$$ \frac{d}{dt} \left( \frac{\partial x_i}{\partial \xi_j} \right) = \frac{\partial}{\partial \xi_j} \left( \frac{d x_i}{dt} \right) = \frac{\partial u_i}{\partial \xi_j} $$
+
+Since $u_i$ is a function of $x_1$, $x_2$ and $x_3$,
+
+$$ \frac{\partial u_i}{\partial \xi_j} = 
+\frac{\partial u_i}{\partial x_1} \frac{\partial x_1}{\partial \xi_j} +
+\frac{\partial u_i}{\partial x_2} \frac{\partial x_2}{\partial \xi_j} +
+\frac{\partial u_i}{\partial x_3} \frac{\partial x_3}{\partial \xi_j} =
+\frac{\partial u_i}{\partial x_l} \frac{\partial x_l}{\partial \xi_j} 
+$$
+
+
+The rate of dilation as we follow the motion is given by the material derivative $\frac{DJ}{Dt}$. 
+
+Write the Jacobian using subscript notation:
+
+$$ J = \epsilon_{ijk} \frac{\partial x_i}{\partial \xi_1} \frac{\partial x_j}{\partial \xi_2} \frac{\partial x_k}{\partial \xi_3} $$
+
+Differentiate by parts:
+
+$$ \frac{DJ}{Dt} = \epsilon_{ijk} \left[
+\left( \frac{\partial u_i}{\partial \xi_1} \right) \frac{\partial x_j}{\partial \xi_2} \frac{\partial x_k}{\partial \xi_3} +
+\frac{\partial x_i}{\partial \xi_1} \left( \frac{\partial u_j}{\partial \xi_2} \right) \frac{\partial x_k}{\partial \xi_3} +
+\frac{\partial x_i}{\partial \xi_1} \frac{\partial x_j}{\partial \xi_2} \left( \frac{\partial u_k}{\partial \xi_3} \right) \right]
+$$
+
+$$ \frac{DJ}{Dt} = \epsilon_{ijk} \left[
+\left( \frac{\partial u_i}{\partial x_l} \frac{\partial x_l}{\partial \xi_1} \right) \frac{\partial x_j}{\partial \xi_2} \frac{\partial x_k}{\partial \xi_3} +
+\frac{\partial x_i}{\partial \xi_1} \left( \frac{\partial u_j}{\partial x_l} \frac{\partial x_l}{\partial \xi_2} \right) \frac{\partial x_k}{\partial \xi_3} +
+\frac{\partial x_i}{\partial \xi_1} \frac{\partial x_j}{\partial \xi_2} \left( \frac{\partial u_k}{\partial x_l} \frac{\partial x_l}{\partial \xi_3} \right) \right]
+$$
+
+Each of the terms in the above equation is expressible as a determinant shown in the previous section. The dummy index $l$ can take values from 1 to 3. The first term is non zero only when $l=i$ and the second when $l=j$ and the thrid when $l=k$ as the determinant goes to zero when two of its rows are same. Hence,
+
+$$ \frac{DJ}{Dt} = \epsilon_{ijk} \left[
+\frac{\partial u_i}{\partial x_i} +
+\frac{\partial u_j}{\partial x_j} +
+\frac{\partial u_k}{\partial x_k} \right]
+\left(
+\frac{\partial x_i}{\partial \xi_1} 
+\frac{\partial x_j}{\partial \xi_2} 
+\frac{\partial x_k}{\partial \xi_3} \right)
+$$
+
+$$ \frac{DJ}{Dt} = J \left[ \nabla_i u_i \right] $$
+
+Divergence of a velocity field $\nabla_i u_i$ can now be interpreted as the rate of dilation or rate of change of elemental volume following the flow path. Since {\bf incompressible} fluids are defined as those with no dilatation during flow, $\nabla_i u_i = 0$ or $\vec{\nabla} \cdot \vec{u} = 0$ is the condition for incompressible fluid flow.
+
+

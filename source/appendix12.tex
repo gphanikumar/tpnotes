@@ -1,0 +1,31 @@
+\section{Stress tensor is symmetric}
+\label{symstress}
+
+Adapted from section 2.7 pg. 57 of \cite{sabersky}.
+
+Consider stress at the center of a control volume of size $ \delta x_1 \times \delta x_2 \times \delta x_3$ as shown in the figure. The torque produced by the forces about an axis along $\hat{x}_3$ and through the center of gravity of the CV is 
+
+$$ T = \sigma_{12} \delta x_1 \delta x_3 \delta x_2 - \sigma_{21}  \delta x_2 \delta x_3 \delta x_1 $$
+
+or 
+
+$$ T = ( \sigma_{12} - \sigma_{21} ) \delta x_1 \delta x_2 \delta x_3 $$
+
+The torque may be equated to the product of angular acceleration ($\ddot{\alpha_3}$) and the moment of inertia taken about the previously mentioned axis ($\hat{x}_3$):
+
+
+$$ ( \sigma_{12} - \sigma_{21} ) \delta x_1 \delta x_2 \delta x_3 = \frac{\rho}{12}  \delta x_1 \delta x_2 \delta x_3 (\delta x_1^2 + \delta x_2^2) \ddot{\alpha_3}  $$
+
+or
+
+$$ ( \sigma_{12} - \sigma_{21} ) = \frac{\rho}{12} (\delta x_1^2 + \delta x_2^2) \ddot{\alpha_3}  $$
+
+As we shrink the CV to infinitesimal size, since the term in the bracket on the right goes to zero, if the L.H.S. were to remain finite $\ddot{\alpha_3}$ must blow up. It can be prevented only if L.H.S. is zero. ie., 
+
+$$ \sigma_{12} = \sigma_{21} $$
+
+or
+
+The tensor $\sigma_{ij}$ is {\bf symmetric}.
+
+

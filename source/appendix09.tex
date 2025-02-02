@@ -1,0 +1,33 @@
+\section{RTT and Continuity Equation}
+\label{ktt}
+
+Using $f=\rho$ in the Reynold's Transport Theorem given in section \ref{rtt}, one recovers continuity equation.
+
+Using $f=\rho G$ in RTT given in section \ref{rtt} where $G$ is any dynamical property per unit mass (such as $G = u_i$, momentum per unit mass) one can bring the material derivative inside the integration.
+
+$$ \frac{D}{Dt} \int_{V}{\rho G dV} = \int_{V}{\frac{\partial \rho G}{\partial t} dV} + \int_{S}{\rho G \vec{u} \cdot \hat{n} dS} $$
+
+Using Gauss theorem to convert a surface integral to volume integral,
+
+$$ \frac{D}{Dt} \int_{V}{\rho G dV} = 
+\int_{V}{\left( G \frac{\partial \rho}{\partial t} + \rho \frac{\partial G}{\partial t} \right) dV} + 
+\int_{V}{\vnabla \cdot \left( \rho u_i G \right) dV} $$
+
+Keeping $\rho u_i$ together and expanding the integrand of the second integral,
+
+$$ \frac{D}{Dt} \int_{V}{\rho G dV} = 
+\int_{V}{\left[ G \frac{\partial \rho}{\partial t} + \rho \frac{\partial G}{\partial t} \right] dV} + 
+\int_{V}{\left[ G \vnabla \cdot \left(\rho u_i\right) + \left(\rho u_i\right) \cdot \vnabla G \right] dV} $$
+
+Regrouping,
+
+$$ \frac{D}{Dt} \int_{V}{\rho G dV} = 
+\int_{V}{G \left[ \frac{\partial \rho}{\partial t} + \vnabla \cdot \left(\rho u_i\right) \right]  dV} + 
+\int_{V}{\rho \left[ \frac{\partial G}{\partial t}  + \left(u_i \cdot \vnabla\right) G \right] dV} $$
+
+Recognising that the term in square brackets in the first integral is zero because of continuity equation and the integrand of the second integral could be simplified using the material derivative,
+
+$$ \boxed{ \frac{D}{Dt} \int_{V}{\rho G dV} = 
+\int_{V}{\rho \frac{DG}{Dt} dV} }$$
+
+

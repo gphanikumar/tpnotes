@@ -1,0 +1,114 @@
+\section{General form of isotropic tensor of order four}
+\label{isotensorfour}
+
+Adapted from section 2.7 of \cite{aris}.
+
+An isotropic tensor $a_{ijkl}$ of order 4 should be invariant under {\bf any} co-ordinate transformation $T_{ij}$.
+
+$$ a_{pqrs} = T_{ip} T_{jq} T_{kr} T_{ls} a_{ijkl} $$
+
+We categorise the 81 components of $a_{ijkl} : i,j,k,l = 1,2,3$ in to classes to figure out the non-zero (independent) components. 
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Class & component & remark \\
+\hline
+I & $T_{1111}$ & All suffixes are same (nnnn)\\ 
+II & $T_{1112}$ & Three suffixes are same (nnnm)\\ 
+III(i) & $T_{1122}$ & Two suffixes are same (nnmm)\\ 
+III(ii) & $T_{1221}$ & Two suffixes are same (nmmn) \\ 
+III(iii) & $T_{1212}$ & Two suffixes are same (nmnm)  \\ 
+IV & $T_{1123}$ & Only two suffixes are same (mmno)\\ 
+\hline
+\end{tabular}
+\end{center}
+
+
+Since class II doesnot include the elements of class I, introduce a tensor $X_{ijkl}$ defined as below:
+
+
+\begin{equation}
+\begin{array}{rll}
+\mathrm{if} & i=j=k=l & X_{ijkl} = 1 \\
+else &  & X_{ijkl}=0 
+\end{array}
+\end{equation}
+
+We now choose co-ordinate rotation operations so that $T_{ij}$ can take such values that will make a conclusion about the relation between components in each of the above mentioned classes is clear. 
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Operation & Description & form of $T_{ij}$ \\
+\hline
+ A & Rotation about $[111]$ axis by $120^o$ & $T_{12} = T_{31} = T_{23} = 1$ \\ 
+ B & Rotation about $[001]$ axis by $90^o$ & $T_{12} = -T_{21} = T_{33} = 1$ \\ 
+ C & Rotation to inverse the direction of $[111]$ & $T_{13} = -T_{22} = T_{31} = -1$ \\ 
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Class & conclusion & operation \\
+\hline
+I & $T_{1111} = T_{2222}$ & A \\
+ & $T_{1111} = T_{2222}$ & B \\
+ & $T_{1111} = T_{3333}$ & C \\
+ & all equal & Overall conclusion \\ 
+ & $X_{ijkl}$ & Representation \\ 
+\hline
+II & $T_{1112} = T_{2223}$ & A \\
+ & $T_{1112} = -T_{2221}$ & B \\
+ & $T_{1112} = T_{3332}$ & C \\
+ & $T_{2223} = T_{2221}$ & C  \\ 
+ & all zero & Overall conclusion \\ 
+\hline
+III(i) & $T_{1122} = T_{2233} $ & A\\ 
+ & $T_{1122} = T_{2211} $ & B\\ 
+ & $T_{1122} = T_{3322} $ & C\\ 
+ & all equal & Overall conclusion \\ 
+ & $\delta_{ij}\delta_{kl}-X_{ijkl}$ & Representation \\ 
+\hline
+III(ii) & $T_{1221}=T_{2332}$ & A \\ 
+ & $T_{1221}=T_{2112}$ & B \\ 
+ & $T_{1221}=T_{3223}$ & C \\ 
+ & all equal & Overall conclusion \\ 
+ & $\delta_{il}\delta_{jk}-X_{iljk}$ & Representation \\ 
+\hline
+III(iii) & $T_{1212}=T_{2323}$ & A  \\ 
+ & $T_{1212}=T_{2112}$ & B  \\ 
+ & $T_{1212}=T_{3232}$ & C  \\ 
+ & all equal & Overall conclusion \\ 
+ & $\delta_{ik}\delta_{jl}-X_{ikjl}$ & Representation \\ 
+\hline
+IV & $T_{1123}=T_{2231}$ & A\\ 
+ & $T_{1123}=-T_{2213}$ & B\\ 
+ & $T_{1123}=T_{3321}$ & C\\ 
+ & $T_{2231}=T_{2213}$ & C\\ 
+ & all zero & Overall conclusion \\ 
+\hline
+\end{tabular}
+\end{center}
+
+Since there is no obvious relation between the components of classes I, III(i), III(ii) and III(iii), we can represent $a_{ijkl}$ by a linear combination of each class:
+
+$$ a_{ijkl} = \mu_1 (\delta_{ij} \delta_{kl} - X_{ijkl} ) + \mu_2 (\delta_{ik} \delta_{jl} - X_{ijkl}) + \mu_3
+(\delta_{il} \delta_{jk} - X_{ijkl} ) + \mu_4 X_{ijkl} $$
+
+or
+
+$$ a_{ijkl} = \mu_1 \delta_{ij} \delta_{kl}  + \mu_2 \delta_{ik} \delta_{jl} + \mu_3
+\delta_{il} \delta_{jk}  + ( \mu_4 - \mu_1 - \mu_2 - \mu_3 ) X_{ijkl} $$
+
+Choose an operation D : arbitrary rotation by some angle. Given the form of $X_{ijkl}$, the elements will not remain the same under such a transformation. Hence the last term in the above equation drops off giving the most general form of a fourth order {\bf isotropic} tensor as:
+
+
+$$ a_{ijkl} = \mu_1 \delta_{ij} \delta_{kl}  + \mu_2 \delta_{ik} \delta_{jl} + \mu_3 \delta_{il} \delta_{jk}  $$
+
+% ---------------------------------------------------------------------------
+
+

@@ -1,0 +1,53 @@
+\section{Change of variable with multiple integrals}
+\label{variablechange}
+
+This section is adapated from section 3.16 of \cite{aris}. In cartesian co-ordinates the element of volume $dV$ is the volume of rectangular parallelepiped of sides $dx_1$, $dx_2$ and $dx_3$:
+
+$$ dV =  dx_1 dx_2 dx_3 $$
+
+It is sometimes convenient to describe position by some other co-ordinates, say, $\xi_1$, $\xi_2$ and $\xi_3$ which are fixed to the control volume as it is moving along with the fluid. These coordinates are called as {\it convected} coordinates. These coordinates are such that the initial volume of the fluid element is given by
+
+$$ dV_0 = d\xi_1 \, d\xi_2 \, d\xi_3 $$
+
+
+The change of co-ordinate system must be given
+ by fixing a point $x$ such that 
+
+$$x_i = x_i(\xi_1, \xi_2, \xi_3) $$
+
+Small differences in the new co-ordinate system are given by 
+
+$$ dx_i = \frac{\partial x_i}{\partial \xi_j} d\xi_j $$
+
+If $dx^{(j)}$ are three vectors with components $(\frac{\partial x_i}{\partial \xi_j} d\xi_j)$ for $j=1,2,3$ then the volume of the element enclosed by these vectors is given by:
+
+$$ dV = dx^{(1)} \cdot ( dx^{(2)} \times dx^{(3)} ) $$
+
+Using $\epsilon_{ijk}$ to write the short form of determinant (triple product),
+
+$$ dV = \epsilon_{ijk} \frac{\partial x_i}{\partial \xi_1} d\xi_1 \frac{\partial x_j}{\partial \xi_2} d\xi_2 \frac{\partial x_k}{\partial \xi_3} d\xi_3  $$
+
+
+$$ dV = J \, d\xi_1 \, d\xi_2 \, d\xi_3  = J \, dV_0$$
+
+where $J$ is the Jacobian of the transformation of variables.
+
+$$ J = \frac{\partial(x_1, x_2, x_3)}{\partial(\xi_1, \xi_2, \xi_3)} = \epsilon_{ijk} \frac{\partial x_i}{\partial \xi_1} \frac{\partial x_j}{\partial \xi_2} \frac{\partial x_k}{\partial \xi_3} $$
+
+In determinant form, it is 
+
+\begin{equation}
+J = \left|
+\begin{array}{lll}
+\frac{\partial x_1}{\partial \xi_1} &  \frac{\partial x_1}{\partial \xi_2} & \frac{\partial x_1}{\partial \xi_3} \\
+\\
+\frac{\partial x_2}{\partial \xi_1} &  \frac{\partial x_2}{\partial \xi_2} & \frac{\partial x_2}{\partial \xi_3} \\
+\\
+\frac{\partial x_3}{\partial \xi_1} &  \frac{\partial x_3}{\partial \xi_2} & \frac{\partial x_3}{\partial \xi_3}
+\end{array}
+\right|
+\end{equation}
+
+Evidently, when two of the rows are same, the determinant is zero.
+
+

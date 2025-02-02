@@ -1,0 +1,272 @@
+\chapter{Energy Transport}
+\label{ch:energytransport}
+
+\section{Learning objectives}
+
+At the end of this lesson, a student should be able to 
+\begin{enumerate}
+\item recall the generalized Fourier heat condution equation in rectangular coordinate systems
+\item analyse Fourier's first law of heat conduction to determine the thermal gradients for steady heat flow across composite walls
+\end{enumerate}
+
+% --------------------------------------------------
+
+\section{Introduction}
+Energy transport or heat transfer is basically through two means: conduction and radiation. The third mode of heat transfer by convection could be imagined as a combination of conduction and advection. \textit{Conduction} is a mode of energy transport by vibrational, rotational and translational degrees of freedom of atoms. The first two are predominant modes of energy exchange between atoms in solid and liquid states while the third is predominant in gaseous state. Energy transport by \textit{radiation} involves emission and absorption of electromagnetic radiation as photons typically in the infrared wavelength range. Taking cue from \textit{Lambert's law} that the attenuation of electromagnetic radiation in a medium is exponential ($ q_z = q_0 \exp\left(-mz\right)$), the absorption coefficient $m$ being higher for medium of higher density, one can consider that radiative heat transfer is mostly a surface phenomena for solids and liquids. Thus, it is often taken in to account in the boundary conditions.
+
+% --------------------------------------------------
+
+\section{Thermal equilibrium}
+
+In this section we talk about thermal equilibrium, how the second law of thermodynamics comes of use and the broad direction of heat transfer laws from this.
+
+
+Consider the case of two identical blocks of $T_1$ and $T_2$ being brought in perfect contact with each other. The system is insulated from the rest of the universe. After a while, the two blocks are in thermal equilibrium if they reach a temperature of $\bar{T} = 0.5*(T_1+T_2)$. During this process, the entropy change of the first block is given by:
+$$ \Delta S_1 = \int_{T_1}^{\bar{T}}{\delta q \over T}$$
+
+At constant pressure, which is the typical condition during heat transfer, we can use the change in enthalpy for the amount of heat given to a body.
+
+$$ \delta q = m C_p dT$$
+
+$$ \Delta S_1 = \int_{T_1}^{\bar{T}}{m C_p dT \over T} = m C_p \ln\left({ \bar{T} \over T_1} \right)$$
+
+Similarly, the entropy change for the second block is given by:
+
+$$ \Delta S_2 = \int_{T_2}^{\bar{T}}{\delta q \over T} = m C_p \ln\left({ \bar{T} \over T_2} \right) $$
+
+The total entropy change is 
+
+$$ \Delta S_\text{total} = \Delta S_1 + \Delta S_2 = m C_p \ln \left( { \bar{T}^2 \over T_1 T_2} \right) $$
+
+If we can show the following equation to be true then it implies that $\Delta S_\text{total} \ge 0 $ which means that the thermal equilibration is spontaneous and that heat flows from a location of high temperature to a location of low temperature until thermal equilibrium is achieved.
+\begin{equation}
+\label{t1t2a}
+{ \bar{T}^2 \over T_1 T_2} \ge 1
+\end{equation}
+
+$$ { \bar{T}^2 \over T_1 T_2} = { \left( T_1 + T_2 \right)^2 \over 4 T_1 T_2} = { T_1^2 + T_2^2 + 2 T_1 T_2 \over 4 T_1 T_2}$$
+
+Since $T_1$ and $T_2$ are different, the following is always true: 
+$$ \left(T_1 - T_2 \right)^2 \ge 0$$ 
+
+This implies $ T_1^2 + T_2^2 - 2 T_1 T_2  \ge 0$ or $ T_1^2 + T_2^2 \ge 2 T_1 T_2 $ or $ T_1^2 + T_2^2 + 2 T_1 T_2 \ge 4 T_1 T_2 $ or that equation~\ref{t1t2a} is true. Thus one can say that thermal equilibration is a spontaneous process.
+
+% --------------------------------------------------
+
+\section{Balance of Enthalpy}
+
+The governing equation for heat transfer by conduction can be derived similar to the way the governing equations for momentum transfer (Navier-Stokes equations) were derived. In that process we had followed the following sequence of steps:
+\begin{itemize}
+\item Balance equation or conservation principle
+\item Gauss theorem to convert surface integral to volume integral
+\item Linear constitutive relation
+\item Curie principle to simplify property tensor
+\end{itemize}
+
+We will follow the same steps to derive the governing equation for energy transport.
+
+The balance equation for heat transfer is the first law of thermodynamics or the conservation of energy. If $dU$ is the change in the internal energy, $dq$ is the heat flow into the system, $-pdV$ is the work done by the system and $dW_{\text{other}}$ is the work done by the system other than reduction in volume,
+
+$$dU = dq - pdV + dW_{\text{other}}$$
+
+$dW_{\text{other}}$ is usually zero for the kind of situations we are interested in.
+
+Using definition of enthalpy $H$ as $H = U + PV$,
+
+$$dH = dU + pdV + Vdp = dq - pdV + pdV + V dp = dq + Vdp$$
+
+Writing $H$ as a function of $T$ and $p$,
+
+$$dH = \left( \frac{\partial H}{\partial T} \right)_p dT + \left( \frac{\partial H}{\partial p} \right)_T dp $$
+
+Since pressure is usually left constant at atmospheric pressure, $H$ is usally $H_p$. Thus,
+
+\begin{equation}
+\boxed{
+dH_p = dq = \rho C_p dT = \rho C_p (T - T_\text{ref})
+}
+\label{hrhocp}
+\end{equation}
+
+If $T_\text{ref}$ is chosen as a reference temperature where $H_p$ is taken as $0$ then one can integrate the above equation to arrive at the following.
+
+\begin{equation}
+H_p = \rho C_p (T - T_\text{ref})
+\label{hrhocpa}
+\end{equation}
+
+
+If the volumetric heat generation term is $g$ and $J_i$ is the surface heat flux through a surface of area $dS$ and surface normal $n_i$, then we can write the energy balance for a control volume of volume $dV$ as
+
+$$ \frac{D}{Dt} \int_V{H dV} = \int_{V}{g dV} - \int_{S}{ J_i n_i dS} $$
+
+Using equation \ref{hrhocp} and making use of Reynold's transport theorem (section \ref{rtt}) to take the material derivative inside the integral: 
+
+\begin{equation}
+  \int_V{\frac{D}{Dt} \rho C_p (T - T_\text{ref}) dV} = \int_{V}{g dV} - \int_{S}{J_i n_i dS} 
+\end{equation}
+
+Using the Gauss theorem to convert the surface integral to volume integral,
+
+\begin{equation}
+  \int_V{\frac{D}{Dt} \rho C_p (T - T_\text{ref}) dV} = \int_{V}{g dV} - \int_{V}{\frac{\partial J_i}{\partial x_i} dV} 
+\end{equation}
+
+
+Since the integration is over the same control volume $dV$, we can equate the integrands.
+
+\begin{equation}
+\frac{D}{Dt} \rho C_p T = g - \frac{\partial J_i}{\partial x_i}
+\label{ebalance}
+\end{equation}
+
+To obtain a relation between the surface heat flux $J_i$ and its effects, we seek a linear constitutive equation as given in the following section.
+
+\section{Fourier's first law}
+
+Since surface heat flux $J_i$ tends to increase temperatures locally leading to temperature differences in the body, it can be related to temperature gradients. The most general way of such a relation could be as given below:
+
+$$ J_j = -k_{ij} \frac{\partial T}{\partial x_i} $$ 
+
+The thermal conductivity ($k_{ij}$) is a tensor of order 2. Usually, the materials of interest are polycrystalline metallic materials and liquids, both of which can be considered as isotropic in most of the situations\footnote{Highly textured polycrystalline materials and liquid crystals are exceptions}. Using Curie principle, thermal conductivity being a material property, it must exhibit at least as much symmetry as the material itself. Thermal conductivity for an isotropic material will be an isotropic tensor and can be written as $k_{ij} = k \delta_{ij}$.
+
+For single crystalline materials that are anisotropic, one can use symmetry arguments to reduce the number of independent values necessary to write the thermal conductivity tensor. \textbf{Lars Onsager}'s reciprocal relations come of great use here in stating that for crystals of rotational symmetry such as 3, 4 and 6 fold, the property tensor can be represented by a symmetric matrix. Using the theorem that all symmetric tensors can be diagonalised (section \ref{diagonalisable}), and applying the four fold symmetry on the tensor to reduce the number of independent values to one as shown in section \ref{cubicsimplify}, we can write the thermal conductivity tensor as following for \textit{polycrystalline materials, liquids and single crystalline materials with four fold symmetry}:
+
+$$ k_{ij} = k \delta_{ij}$$
+
+However, for single crystalline materials that donot possess cubic symmetry such as graphite, thermal conductivity should be written as a tensor (with two or more components).
+
+Thus, for the kind of materials that we interested in (i.e., isotropic), the flux can be expressed in terms of temperature gradient as :
+
+$$ J_j = -k \delta_{ij} \frac{\partial T}{\partial x_i} $$
+or
+
+First law of Fourier heat conduction:
+\begin{equation}
+\boxed{
+ J_i = -k \frac{\partial T}{\partial x_i}
+}
+\label{fourierf}
+\end{equation}
+
+
+The Fourier's equation can be written in a co-ordinate system independent general form as:
+
+$$ \vec{q} = -k \vnabla T$$
+
+such that it can be written for different co-ordinate systems as follows:
+
+Cartesian ($x_1,x_2,x_3$):
+$$ \vec{q} = -k\left( \frac{\partial T}{\partial x_1} \hat{x}_1 + \frac{\partial T}{\partial x_2} \hat{x}_2 + \frac{\partial T}{\partial x_3} \hat{x}_3 \right) $$
+
+
+Cylindrical ($r,\theta,z$):
+$$ \vec{q} = -k\left( \frac{\partial T}{\partial r} \hat{r} + \frac{1}{r} \frac{\partial T}{\partial \theta} \hat{\theta} + \frac{\partial T}{\partial z} \hat{z} \right) $$
+
+Spherical ($r,\theta,\phi$):
+$$ \vec{q} = -k\left( \frac{\partial T}{\partial r} \hat{r} + \frac{1}{r} \frac{\partial T}{\partial \theta} \hat{\theta} + \frac{1}{r \sin\theta}\frac{\partial T}{\partial \phi} \hat{\phi} \right) $$
+
+\section{Fourier's second law}
+
+Substituting equation \ref{fourierf} in to \ref{ebalance}:
+
+$$ \frac{D}{Dt} \rho C_p T = g - \frac{\partial}{\partial x_i} \left( -k \frac{\partial T}{\partial x_i} \right) $$
+
+\begin{equation}
+\frac{D \rho C_p T}{Dt}  = \frac{\partial}{\partial x_i} \left(k \frac{\partial T}{\partial x_i} \right) + g
+\label{fourier2a}
+\end{equation}
+
+For constant properties, using thermal diffusivity $\alpha = \frac{k}{\rho C_p}$
+\begin{equation}
+\boxed{
+\frac{DT}{Dt} = \frac{\partial T}{\partial t} + \vec{u} \cdot \vnabla T  = \alpha \nabla^2 T + \frac{g}{\rho C_p}
+}
+\label{fourier2b1}
+\end{equation}
+
+Expanding the $\nabla$ operator for different co-ordinate systems:
+
+Cartesian:
+\begin{equation}
+\frac{\partial T}{\partial t} + u_1 \frac{\partial T}{\partial x_1} +  u_2 \frac{\partial T}{\partial x_2} + u_3 \frac{\partial T}{\partial x_3} = \alpha \left( \frac{\partial^2 T}{\partial x_1^2} + \frac{\partial^2 T}{\partial x_2^2} + \frac{\partial^2 T}{\partial x_3^2}\right)  + \frac{g}{\rho C_p}
+\end{equation}
+
+Cylindrical:
+\begin{equation}
+\frac{\partial T}{\partial t} + u_r \frac{\partial T}{\partial r} + \frac{u_\theta}{r} \frac{\partial T}{\partial \theta} + u_z \frac{\partial T}{\partial z}  = \alpha \left( \frac{1}{r} \frac{\partial}{\partial r} \left[ r \frac{\partial T}{\partial r} \right] + \frac{1}{r^2} \frac{\partial^2 T}{\partial \theta^2} + \frac{\partial^2 T}{\partial z^2}\right)  + \frac{g}{\rho C_p}
+\end{equation}
+
+Spherical:
+\begin{align}
+\frac{\partial T}{\partial t} + u_r \frac{\partial T}{\partial r} + \frac{u_\theta}{r} \frac{\partial T}{\partial \theta} + \frac{u_\phi}{r\sin\theta} \frac{\partial T}{\partial \phi} = \nonumber \\
+\alpha \left( \frac{1}{r^2} \frac{\partial}{\partial r} \left[ r^2 \frac{\partial T}{\partial r} \right] + \frac{1}{r^2 \sin\theta} \frac{\partial}{\partial \theta} \left[ \sin\theta \frac{\partial T}{\partial \theta} \right] + \frac{1}{r^2 \sin^2 \theta} \frac{\partial^2 T}{\partial \phi^2}\right)  + \frac{g}{\rho C_p}
+\end{align}
+
+Recognising that for solids, $\vec{u} = 0$, leading to $\frac{D}{Dt} = \frac{\partial}{\partial t} + \vec{u} \cdot \vnabla = \frac{\partial}{\partial t}$, we can use co-ordinate system independent notation to write the \textit{Fourier's second law} as:
+
+\begin{equation}
+\boxed{
+\frac{\partial T}{\partial t}  = \alpha \nabla^2 T + \frac{g}{\rho C_p}
+}
+\label{fourier2b2}
+\end{equation}
+
+The expanded forms for the three co-ordinate systems of interest are:
+
+Cartesian ($x_1,x_2,x_3$):
+\begin{equation}
+\frac{\partial T}{\partial t}  = \alpha \left( \frac{\partial^2 T}{\partial x_1^2} + \frac{\partial^2 T}{\partial x_2^2} + \frac{\partial^2 T}{\partial x_3^2}\right)  + \frac{g}{\rho C_p}
+\end{equation}
+
+Cylindrical ($r,\theta,z$):
+\begin{equation}
+\frac{\partial T}{\partial t}  = \alpha \left( \frac{1}{r} \frac{\partial}{\partial r} \left[ r \frac{\partial T}{\partial r} \right] + \frac{1}{r^2} \frac{\partial^2 T}{\partial \theta^2} + \frac{\partial^2 T}{\partial z^2}\right)  + \frac{g}{\rho C_p}
+\end{equation}
+
+Spherical ($r,\theta,\phi$):
+\begin{equation}
+\frac{\partial T}{\partial t} = \alpha \left( \frac{1}{r^2} \frac{\partial}{\partial r} \left[ r^2 \frac{\partial T}{\partial r} \right] + \frac{1}{r^2 \sin\theta} \frac{\partial}{\partial \theta} \left[ \sin\theta \frac{\partial T}{\partial \theta} \right] + \frac{1}{r^2 \sin^2 \theta} \frac{\partial^2 T}{\partial \phi^2}\right)  + \frac{g}{\rho C_p}
+\end{equation}
+
+
+\section{Boundary conditions}
+
+\textbf{Neumann} boundary condition: Heat flux is specified at the boundary.
+
+\textbf{Dirichlet} boundary condition: Temperature is specified at the boundaries.
+
+\textbf{Newton's Law} of cooling: Heat flux as a function of boundary temperature is specified at the boundary. 
+
+The rate of heat transfer from a surface of a solid to the fluid it is in contact with is proportional to the difference in temperatures of the fluid and the solid.
+
+$$q=h \left( T_s - T_\infty\right)$$
+
+The heat transfer coefficient ($h$) is a property dependent on several factors including velocity of the fluid, geometry of the surface and thermophysical properties of the two materials.
+
+A heat flux balance at the surface will connect the Fourier's equation with the  Newton's law of cooling as follows:
+
+$$ q|_{x=0} = h\left( T_s - T_\infty \right) = -k \frac{\partial T}{\partial x} |_{x=0} $$
+Since $h$ is always defined as a positive quantity irrespective of the direction of heat flow,
+
+$$ h = \left| \frac{-k\frac{\partial T}{\partial x}|_{x=0}}{T_s - T_\infty} \right| $$
+
+\textbf{Interface resistance}: When smooth surfaces of two solids are in perfect contact, the interface can be said to be at one temperature. However, if the surfaces are not smooth and the contact is not perfect, there could be a jump in the interface temperatures\footnote{at a macro-scale. The temperature will be continuous without a jump when measured at micro-scale. Kapitza resistance is an exception} and the resistance to heat flow across the interface is characterized by a parameter $h$, interfacial heat transfer coefficient. The heat flux across the two interfaces can then be written similar to Newton's law as 
+$$ q|_\text{interface} = h \left(T_{s1} - T_{s2} \right) $$
+
+\textbf{Radiative heat flux}: For gases at high temperatures or surfaces of solids or liquids at high temperatures, radiation can be a significant mode of energy transport. When expressed as a boundary heat flux, it can written as:
+$$ q = e \sigma_{SB}T^4 $$
+
+$\sigma_{SB}$ is the Stefan-Boltzmann constant and $e$ is the emissivity. Radiative heat flux from surface $1$ to surface $2$ (of areas $A_1$ and $A_2$) that have \textit{view factors} $F_{12}$ and $F_{21}$ is
+
+$$q_{12} = A_1 F_{12} (T_1^4 - T_2^4) = A_2 F_{21} (T_1^4 - T_2^4) $$
+
+% --------------------------------------------------------------
+
+\section{Summary}
+
+\begin{enumerate}
+\item Fourier's first law in different coordinate systems
+\end{enumerate}
+
+% --------------------------------------------------------------

@@ -1,0 +1,417 @@
+\chapter{Application of subscript notation}
+\label{ch:subnot2}
+
+\section{Relation between Kronecker delta and Levi-Civita symbol}
+
+\begin{question}
+\label{epsilon-reduce}
+Convince yourself about the relation between $\delta_{ij}$ and $\epsilon_{ijk}$ :
+$$\epsilon_{ijk}\epsilon_{klm} = \delta_{il}\delta_{jm} - \delta_{im}\delta_{jl} $$
+\end{question}
+\begin{solution}[print]
+The values of RHS are 
+\begin{equation}
+\label{epsilondelta}
+\begin{array}{r}
++1 \text{ if } i=l \text{ and } j = m \text{ and } i \ne j \\
+-1 \text{ if } i=m \text{ and } j = l \text{ and } i \ne j \\
+0 \text{ for any other combination}
+\end{array}
+\end{equation}
+
+For the first case, it turns out that $\epsilon_{ijk} = \epsilon_{lmk} = \epsilon_{klm}$ and the indices are non-repeating. Thus, whether they are cyclic or not, LHS is $\epsilon_{klm}^2$ and is $+1$. For the second case, $\epsilon_{ijk} = \epsilon_{mlk} = -\epsilon_{klm}$ and the indices are non-repeating. Thus, LHS is $-\epsilon_{klm}^2$ and is $-1$. 
+
+\end{solution}
+
+As a continuation of this, one can also write:
+$$ \epsilon_{ijk} \epsilon_{ijm} = 2 \delta_{km} $$
+
+% -------------------------------------------------------------------------------
+
+Based on the relations given above, the following vector identities can be derived using subscript notation.
+
+% -------------------------------------------------------------------------------
+
+\section{Vector identities}
+
+\begin{lo3}[Vector Identities]
+Prove vector identities using subscript notation
+\end{lo3}
+
+% ---------------------------------------------------------------
+\begin{question}
+Prove the following vector identity.
+\begin{equation}
+\vnabla \cdot(\vnabla \phi) = \nabla^2\phi
+\end{equation} 
+\end{question}
+\begin{solution}[print]
+$$ \vnabla \cdot(\vnabla \phi) = \frac{\partial}{\partial x_i} \frac{\partial}{\partial x_i} \phi 
+= \frac{\partial^2 \phi}{\partial x^2_i} = \nabla^2\phi $$
+\end{solution}
+
+% -------------------------------------------------------------------------------
+
+\begin{question}
+Prove the following vector identity.
+\begin{equation}
+\vnabla \times(\vnabla \phi) = 0
+\end{equation} 
+\end{question}
+\begin{solution}[print]
+
+$$ p_i = \vnabla \times(\vnabla \phi) = \epsilon_{ijk} \frac{\partial}{\partial x_j} \frac{\partial \phi}{\partial x_k} = \epsilon_{ijk} \frac{\partial^2 \phi}{\partial x_j \partial x_k} $$
+
+For each term with the index $i$, there are two non zero terms on the RHS to be summed up. While the order of differentiation is immaterial, $\epsilon_{ijk}$ is asymmetric about the indices $j,k$. Hence the RHS will vanish.
+
+Take for example,
+
+$$ p_1 = \epsilon_{1jk} \frac{\partial^2 \phi}{\partial x_j \partial x_k} =
+\epsilon_{123} \frac{\partial^2 \phi}{\partial x_2 \partial x_3} +  \epsilon_{132} \frac{\partial^2 \phi}{\partial x_3 \partial x_2}  = 
+( \epsilon_{123} + \epsilon_{132}) \frac{\partial^2 \phi}{\partial x_2 \partial x_3} = 0 $$
+
+Similarly the other terms will also vanish.
+\end{solution}
+
+% -------------------------------------------------------------------------------
+
+\begin{question}[ID=qprereq1] \label{qp:aris2.23.1}
+(Exercise 2.23.1 of \cite{aris}) Show how to find the vector which lies in the intersection of the plane of $\vec{a}$ and $\vec{b}$ with the plane of $\vec{c}$ and $\vec{d}$.
+\end{question}
+\begin{solution}[print]
+Look at the solution for 2.23.1 of Aris here.
+\end{solution}
+
+% -------------------------------------------------------------------------------
+
+\begin{question}
+Convince yourself that the following relations are valid.
+Condition for coplanarity of three vectors $a_i$, $b_j$ and $c_k$ is:
+$$ \epsilon_{ijk} a_i b_j c_k = 0 $$
+\end{question}
+\begin{solution}[print]
+The term given is the determinant of a square matrix where each row contains the elements of each of the three vectors. However, the condition for coplanarity of three vectors is that one of them is a linear combination of the other two. But we know that when one row of a square matrix is a linear combination of the other two then the determinant is zero. Hence proved.
+\end{solution}
+
+% ---------------------------------------------------------------
+
+The following involve only gradient and inner product operations.
+
+% --------------------------------------------------------------
+
+\begin{question}
+Prove the following using subscript notation.
+$$\vec{\nabla}(\phi \psi) = \phi \vec{\nabla} \psi + \psi \vec{\nabla} \phi$$
+\end{question} 
+
+\begin{solution}[print]
+$$\vec{\nabla}(\phi \psi) = \phi \vec{\nabla} \psi + \psi \vec{\nabla} \phi$$
+$$\vec{\nabla}(\phi \psi) = {\partial \over \partial x_i} (\phi \psi) $$
+Differentiate by parts
+$$ = \psi {\partial \over \partial x_i} \phi  + \phi {\partial \over \partial x_i} \psi $$
+$$ = \psi \vec{\nabla} \phi + \phi \vec{\nabla} \psi  $$
+\end{solution}
+
+% --------------------------------------------------------------
+
+\begin{question}
+Prove the following using subscript notation.
+$$\vnabla \cdot(\vnabla \phi) = \nabla^2\phi$$
+\end{question} 
+\begin{solution}[print]
+$$ \vec{\nabla} \cdot(\vec{\nabla} \phi) = \nabla^2\phi $$
+
+$$ \vec{\nabla} \cdot(\vec{\nabla} \phi) = \frac{\partial}{\partial x_i} \frac{\partial}{\partial x_i} \phi 
+= \frac{\partial^2 \phi}{\partial x^2_i} = \nabla^2\phi $$
+\end{solution}
+
+% --------------------------------------------------------------
+
+\begin{question}
+	\label{divsv}
+Prove the following using subscript notation.
+$$\vec{\nabla} \cdot (\phi\vec{f}) = \phi (\nabla\cdot\vec{f}) + \vec{f} \cdot \left(\vec{\nabla}\phi\right) $$
+\end{question}
+\begin{solution}[print]
+$$ \vec{\nabla} \cdot \left( \phi \vec{f} \right) = {\partial \over \partial x_i} \left( \phi f_i \right) $$
+Differentiate by parts, element by element
+$$ = \phi {\partial \over \partial x_i} f_i + f_i {\partial \over \partial x_i} \phi $$
+$$ = \phi \left( \vec{\nabla} \cdot \vec{f} \right) + \vec{f} \cdot \left( \vec{\nabla} \phi \right) $$
+\end{solution}
+
+% --------------------------------------------------------------
+
+The following identity introduces the curl operation. 
+
+\begin{question}
+Prove the following using subscript notation
+$$ \vec{\nabla} \times(\phi\vec{f}) = \nabla\phi \times \vec{f} + \phi (\nabla\times\vec{f})$$
+\end{question}
+
+\begin{solution}[print]
+$$ \vec{\nabla} \times(\phi\vec{f}) = \nabla\phi \times \vec{f} + \phi (\nabla\times\vec{f})$$
+
+$$ \vec{\nabla} \times \left( \phi \vec{f} \right) = \epsilon_{ijk} {\partial \over \partial x_j} {\phi f_k} $$
+
+Differentiate by parts
+
+$$ = \epsilon_{ijk} \left[ f_k {\partial \over \partial x_j} \phi + \phi {\partial \over \partial x_j} f_k \right] $$
+
+$$ = \epsilon_{ijk} {\partial \phi \over \partial x_j} f_k + \phi \epsilon_{ijk} {\partial f_k \over \partial x_j} $$
+
+$$ = \vec{\nabla}\phi \times \vec{f} + \phi \vec{\nabla} \times \vec{f} $$
+
+\end{solution}
+
+% --------------------------------------------------------------
+
+\begin{question}
+Prove the following using subscript notation
+$$\vec{\nabla}\cdot(\vec{\nabla}\times\vec{f}) = 0$$
+\end{question} 
+
+\begin{solution}[print]
+$$ \vec{\nabla} \cdot \vec{\nabla} \times \vec{f} = {\partial \over \partial x_i} \epsilon_{ijk} {\partial \over \partial x_j} f_k $$
+
+$$ = \epsilon_{ijk} {\partial \over \partial x_i} {\partial \over \partial x_j} f_k$$
+
+In this expression, $\epsilon_{ijk}$ is not symmetric over the indices $i$ and $j$.
+
+But $ {\partial \over \partial x_i} {\partial \over \partial x_j}$ is symmetric over the indices $i$ and $j$ since the order of differentiation should not matter for well behaved functions.
+Thus, when summed over these indices, the result must be zero.
+
+\end{solution}
+
+% --------------------------------------------------------------
+
+The following identity involves cross product and needs switching indexes to reduce index expressions to more intuitive form.
+
+\begin{question}
+Prove the following using subscript notation.
+$$\nabla\cdot(\vec{f}\times\vec{g}) = \vec{g}\cdot(\nabla\times\vec{f}) - \vec{f}\cdot(\nabla\times\vec{g})$$
+\end{question} 
+
+\begin{solution}[print]
+$$ \vec{\nabla} \cdot \left( \vec{f} \times \vec{g} \right) = {\partial \over \partial x_i} \epsilon_{ijk} f_j g_k = \epsilon_{ijk} {\partial \over \partial x_i} \left( f_j g_k \right) $$
+Differentiate by parts
+$$ = \epsilon_{ijk} \left[ f_j {\partial g_k \over \partial x_i} + g_k {\partial f_j \over \partial x_i} \right] = f_j \epsilon_{ijk} {\partial g_k \over \partial x_i} + g_k \epsilon_{ijk} {\partial f_j \over \partial x_i} $$
+$$ = f_j \epsilon_{jki} {\partial \over \partial x_i} g_k + g_k \epsilon_{kij} {\partial \over \partial x_i} f_j $$
+$$ = - f_j \epsilon_{jik} {\partial \over \partial x_i} g_k + g_k \epsilon_{kij} {\partial f_j \over \partial x_i} $$
+$$ = - \vec{f}\cdot(\nabla\times\vec{g}) + \vec{g}\cdot(\nabla\times\vec{f}) $$
+\end{solution}
+
+% --------------------------------------------------------------
+
+The following identity involves the cross product twice. Use the identity in the question~\ref{epsilon-reduce} to convert two Levi-Civita tensors into Kronecker delta terms.
+
+\begin{question}
+Prove the following using subscript notation
+$$\vec{\nabla}(\vec{\nabla}\cdot\vec{f}) = \vec{\nabla}\times(\vec{\nabla}\times\vec{f}) + \nabla^2\vec{f}$$
+\end{question} 
+
+\begin{solution}[print]
+We start with R.H.S.
+$$ \vec{\nabla}\times\vec{f} = \epsilon_{ijk} {\partial \over \partial x_j} f_k $$
+
+$$ \vec{\nabla}\times(\vec{\nabla}\times\vec{f}) = \epsilon_{lmi} {\partial \over \partial x_m} \epsilon_{ijk} {\partial \over \partial x_j} f_k $$
+
+$$ = \epsilon_{ijk} \epsilon_{lmi} {\partial^2 f_k \over \partial x_m \partial x_j} $$
+
+$$ = \left[ \delta_{lj}\delta_{mk} - \delta_{lk}\delta_{mj} \right] {\partial^2 f_k \over \partial x_m \partial x_j} $$
+
+$$ = \left[ \delta_{lj}\delta_{mk} - \delta_{lk}\delta_{mj} \right] {\partial^2 f_k \over \partial x_m \partial x_j} $$
+
+$$ = \delta_{lj} \delta_{mk} {\partial^2 f_k \over \partial x_m \partial x_j} - \delta_{lk} \delta_{mj} {\partial^2 f_k \over \partial x_m \partial x_j} $$
+
+$$ = \delta_{lj} {\partial^2 f_m \over \partial x_m \partial x_j} - \delta_{mj} {\partial^2 f_l \over \partial x_m \partial x_j} $$
+
+$$ = {\partial^2 f_m \over \partial x_m \partial x_l} - {\partial^2 f_l \over \partial x_m \partial x_m} = {\partial \over \partial x_l} {\partial f_m \over \partial x_m } - {\partial^2 f_l \over \partial x_m \partial x_m} $$
+
+$$ = \vec{\nabla} \left( \vec{\nabla} \cdot \vec{f} \right) - \vec{\nabla}^2 \vec{f} $$
+
+Rearrange the terms to see that the identity has been proved.
+
+\end{solution}
+
+% -----------------------------------------------------------------------
+
+\begin{question}
+$$\nabla\times(\vec{f}\times\vec{g}) = \vec{f} (\nabla\cdot\vec{g}) - \vec{g} (\nabla\cdot\vec{f}) + (\vec{g}\cdot\nabla)\vec{f} - (\vec{f}\cdot\nabla)\vec{g} $$
+\end{question} 
+
+\begin{solution}[print]
+$$ \vec{f} \times \vec{g} = \epsilon_{ijk} f_j g_k $$
+$$ \vec{\nabla} \times \left( \vec{f} \times \vec{g} \right) = \epsilon_{lmi} {\partial \over \partial x_m} \epsilon_{ijk} f_j g_k $$
+$$ = \epsilon_{ijk} \epsilon_{lmi} {\partial \over \partial x_m} \left( f_j g_k \right) $$
+$$ = \left[ \delta_{lj} \delta_{mk} - \delta_{lk} \delta_{mj} \right] \left[ f_j {\partial g_k \over \partial x_m} + g_k {\partial f_j \over \partial x_m} \right] $$
+
+$$ = \left[ \delta_{lj} \delta_{mk} - \delta_{lk} \delta_{mj} \right] \left[ f_j {\partial g_k \over \partial x_m} + g_k {\partial f_j \over \partial x_m} \right] $$
+
+$$ = \delta_{lj} \delta_{mk} f_j {\partial g_k \over \partial x_m} - 
+\delta_{lk} \delta_{mj} f_j {\partial g_k \over \partial x_m} + 
+\delta_{lj} \delta_{mk} g_k {\partial f_j \over \partial x_m} - 
+\delta_{lk} \delta_{mj} g_k {\partial f_j \over \partial x_m}  $$
+
+$$ = \delta_{mk} f_l {\partial g_k \over \partial x_m} - 
+\delta_{lk} f_m {\partial g_k \over \partial x_m} + 
+\delta_{mk} g_k {\partial f_l \over \partial x_m} - 
+\delta_{lk} g_k {\partial f_m \over \partial x_m}  $$
+
+$$ = f_l {\partial g_m \over \partial x_m} - 
+ f_m {\partial g_l \over \partial x_m} + 
+ g_m {\partial f_l \over \partial x_m} - 
+g_l {\partial f_m \over \partial x_m}  $$
+
+$$ = \vec{f} \left( \vec{\nabla} \cdot \vec{g} \right) -
+\left( \vec{f} \cdot \vec{\nabla} \right) \vec{g} +
+\left( \vec{g} \cdot \vec{\nabla} \right) \vec{f} -
+\vec{g} \left( \vec{\nabla} \cdot \vec{f} \right) $$
+\end{solution}
+
+% -----------------------------------------------------------------------
+
+\begin{question}
+$$\vec{\nabla} \left( \vec{f} \cdot \vec{g} \right) = \vec{f} \times \left( \vec{\nabla} \times \vec{g} \right) + \vec{g} \times \left( \vec{\nabla} \times\vec{f} \right) + \left( \vec{f} \cdot \vec{\nabla} \right) \vec{g} + \left( \vec{g} \cdot \vec{\nabla} \right) \vec{f} $$
+\end{question}
+
+\begin{solution}[print]
+We start from the R.H.S.
+
+$$ \vec{f} \times \left( \vec{\nabla} \times \vec{g} \right) = \epsilon_{lmi} f_m \epsilon_{ijk} {\partial g_k \over \partial x_j} $$
+
+$$ \vec{g} \times \left( \vec{\nabla} \times \vec{f} \right) = \epsilon_{lmi} g_m \epsilon_{ijk} {\partial f_k \over \partial x_j} $$
+
+Thus,
+
+$$ \vec{f} \times \left( \vec{\nabla} \times \vec{g} \right) + \vec{g} \times \left( \vec{\nabla} \times \vec{f} \right) = \epsilon_{lmi} f_m \epsilon_{ijk} {\partial g_k \over \partial x_j} + \epsilon_{lmi} g_m \epsilon_{ijk} {\partial f_k \over \partial x_j} $$
+
+$$ = \epsilon_{ijk} \epsilon_{lmi} \left[ f_m {\partial g_k \over \partial x_j} + g_m {\partial f_k \over \partial x_j} \right]$$
+
+$$ = \left[ \delta_{lj} \delta_{mk} - \delta_{lk} \delta_{mj} \right] \left[ f_m {\partial g_k \over \partial x_j} + g_m {\partial f_k \over \partial x_j} \right] $$
+
+$$ = \delta_{lj} \delta_{mk} f_m {\partial g_k \over \partial x_j}  - \delta_{lk} \delta_{mj} f_m {\partial g_k \over \partial x_j} + \delta_{lj} \delta_{mk} g_m {\partial f_k \over \partial x_j} - \delta_{lk} \delta_{mj} g_m {\partial f_k \over \partial x_j} $$
+
+$$ = f_k {\partial g_k \over \partial x_l} -  f_j {\partial g_l \over \partial x_j} + g_k {\partial f_k \over \partial x_l} - g_j {\partial f_l \over \partial x_j} $$
+
+$$ = f_k {\partial g_k \over \partial x_l} +  g_k {\partial f_k \over \partial x_l} -  f_j {\partial g_l \over \partial x_j} - g_j {\partial f_l \over \partial x_j} $$
+
+$$ = {\partial \over \partial x_l} \left( f_k g_k \right) - \left( f_j {\partial \over \partial x_j} \right) g_l - \left( g_j {\partial \over \partial x_j} \right) f_l $$
+
+$$ = \vec{\nabla} \left( \vec{f} \cdot \vec{g} \right) - \left( \vec{f} \cdot \vec{\nabla} \right) \vec{g} - \left( \vec{g} \cdot \vec{\nabla} \right) \vec{f} $$
+
+Rearrange the terms to see that the identity has been proved.
+
+\end{solution}
+
+% -----------------------------------------------------------------------
+
+\begin{question}
+Prove the identity.
+$$\frac{1}{2} \vec{\nabla}(\vec{f}\cdot\vec{f}) = \vec{f} \times \vec{\nabla}\times\vec{f} + (\vec{f}\cdot \vec{\nabla})\vec{f}$$
+\end{question}
+\begin{solution}[print]
+Use the identity for $\nabla(\vec{f}\cdot\vec{g})$ and put $\vec{f} = \vec{g}$.
+\end{solution}
+
+% -----------------------------------------------------------------------
+
+\begin{question}
+$$(\vec{f}\times\vec{g})\times\vec{h} = (\vec{f}\cdot\vec{h}) \vec{g} - (\vec{g}\cdot\vec{h}) \vec{f}$$
+\end{question}
+\begin{solution}[print]
+Using $i$ as the free index:
+$$ \vec{f} \times \vec{g} = \epsilon_{ijk} f_j g_k $$
+
+Using $l$ as the free index:
+$$ \left( \vec{f} \times \vec{g} \right) \times \vec{h} = \epsilon_{lim} \left[ \epsilon_{ijk} f_j g_k \right] h_m $$
+
+Cycle the indexes and gather the permutation matrices:
+$$ = \epsilon_{ijk} \epsilon_{iml} f_j g_k h_m $$
+
+$$ = \left[ \delta_{mj} \delta_{lk} - \delta_{mk} \delta_{jl} \right] f_j g_k h_m $$
+
+$$ = \delta_{mj} \delta_{lk} f_j g_k h_m - \delta_{mk} \delta_{jl} f_j g_k h_m $$
+
+$$ = f_j g_l h_j - f_l g_m h_m $$
+$$ = \left( \vec{f} \cdot \vec{h} \right) \vec{g} - \left( \vec{g} \cdot \vec{h} \right) \vec{f} $$
+
+\end{solution}
+
+% -----------------------------------------------------------------------
+
+These identities involve two cross products involving vector fields.
+
+% -----------------------------------------------------------------------
+
+\begin{question}
+$$\vec{f} \times \left( \vec{g} \times\vec{h} \right) = \left( \vec{f} \cdot \vec{h} \right) \vec{g} - \left( \vec{f} \cdot\vec{g} \right) \vec{h}$$
+\end{question}
+\begin{solution}[print]
+
+Using $i$ as the free index:
+$$ \vec{g} \times \vec{h} = \epsilon_{ijk} g_j h_k $$
+
+Using $l$ as the free index:
+$$ \left( \vec{f} \times \vec{g} \right) \times \vec{h} = \epsilon_{lmi} f_m \left[ \epsilon_{ijk} g_j h_k \right] $$
+
+Cycle the indices and gather the permutation matrices:
+$$ = \epsilon_{ijk} \epsilon_{ilm} f_m g_j h_k $$
+
+$$ = \left[ \delta_{jl} \delta_{mk}  - \delta_{mj} \delta_{lk} \right] f_m g_j h_k $$
+
+$$ = \delta_{jl} \delta_{mk}  f_m g_j h_k - \delta_{mj} \delta_{lk} f_m g_j h_k $$
+
+$$ = f_k g_l h_k - f_j g_j h_l $$
+
+$$ = \left( \vec{f} \cdot \vec{h} \right) \vec{g} - \left( \vec{f} \cdot \vec{g} \right) \vec{h} $$
+
+\end{solution}
+
+% -----------------------------------------------------------------------
+
+These identities involve a number of terms to be consolidated.
+
+% -----------------------------------------------------------------------
+
+\begin{question}
+$$(\vec{f} \times \vec{g}) \cdot (\vec{f} \times \vec{g}) = |f|^2 |g|^2 - (\vec{f} \cdot \vec{g})^2$$
+\end{question}
+\begin{solution}[print]
+
+Choose $i$ as the free index for each of the two terms.
+
+Write first term using:
+$$ \vec{f} \times \vec{g} = \epsilon_{ijk} f_j g_k $$
+Write second term using:
+$$ \vec{f} \times \vec{g} = \epsilon_{ilm} f_l g_m $$
+
+Dot the two quantities over the index $i$ to give:
+
+$$ \left( \vec{f} \times \vec{g} \right) \cdot \left( \vec{f} \times \vec{g} \right) = \epsilon_{ijk} f_j g_k \epsilon_{ilm} f_l g_m $$
+
+$$ = \epsilon_{ijk} \epsilon_{ilm} f_j g_k f_l g_m $$
+
+$$ = \left( \delta_{jl} \delta_{km} - \delta_{jm} \delta_{kl} \right) f_j g_k f_l g_m $$
+
+$$ = \delta_{jl} \delta_{km} f_j g_k f_l g_m - \delta_{jm} \delta_{kl} f_j g_k f_l g_m $$
+
+$$ = f_l f_l g_m g_m - f_m g_m f_l g_l $$
+
+$$ = \left( \vec{f} \cdot \vec{f} \right) \left( \vec{g} \cdot \vec{g} \right) - \left( \vec{f} \cdot \vec{g} \right)^2 $$
+
+\end{solution}
+
+% -----------------------------------------------------------------------
+
+\section{Summary}
+
+\begin{enumerate}
+\item Kronecker delta can be used for inner (dot) products and to replace indices
+\item Levi-Civita symbol can be used for cross products and to evaluate determinants
+\end{enumerate}
+
+% -----------------------------------------------------------------------
+
+
+% ----- end of prereq1.tex --------------------------------
+

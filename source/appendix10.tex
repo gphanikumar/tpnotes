@@ -1,0 +1,24 @@
+\section{Cauchy's stress principle}
+\label{cauchy}
+
+Adapted from section 5.11 of \cite{aris}.
+
+Let $\hat{n}$ be the unit outward normal at a point of the surface $S$ and $\sigma(\hat{n})$ the force per unit area exerted there by the material outside $S$. Then Cauchy's principle asserts that $\sigma(\hat{n})$ is a function of the position $x$, the time $t$ and the orientation $n$ of the surface element. Thus the total internal force exerted on the volume $V$ through its bounding surface $S$ is 
+
+$$ \int_{S}{\sigma(\hat{n}) dS } $$
+
+If $f$ is the external force per unit mass (e.g., $f=-g\hat{x}_3$), the total external force will be 
+
+$$ \int_{V}{\rho f dV} $$
+
+The principle of conservation of linear momentum asserts that the sum of these two forces equals the rate of change of linear momentum of the volume.
+
+$$ \frac{d}{dt} \int_{V}{\rho v dV} = \int_{V}{\rho f dV} +  \int_{S}{\sigma(\hat{n}) dS } $$ 
+
+If $V$ is a volume of a given shape with a characteristic dimension $d$ then $V \sim d^3$ and $S \sim d^2$. As we let $V$ shrink on a point but preserve the shape, the first two integrals decrease as $d^3$ where as the last will as $d^2$. So,
+
+$$ \lim_{d \to 0}{\frac{1}{d^2}\int_{S}{\sigma(\hat{n}) dS}} = 0 $$
+
+ie., the stresses are locally in equilibrium.
+
+

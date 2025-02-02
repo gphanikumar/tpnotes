@@ -1,0 +1,110 @@
+%------ NSCylindrical.tex start -----------------
+\section{Equations in cylindrical co-ordinate system}
+
+We should choose a co-ordinate system with an orientation that best captures the symmetry of the problem and simplifies the final form of the solution.
+
+Equations \ref{nsan} are written for constant properties ($\rho$ and $\mu$) and using the operators $\vnabla$ and $\nabla^2$. These operators convey a meaning independent of co-ordinate system and enable us to assign a meaning to each term in the equation. 
+
+One can (with some endurance) derive the equations by expressing $x_1, x_2, x_3$ in terms of $r, \theta, z$ for cylindrical co-ordinate system or $r, \theta, \phi$ for spherical co-ordinate system and derive the necessary relations. The expansion of these operators and the N-S equations for cylindrical co-ordinate system can be borrowed from Appendix A of \cite{bls}. Following are the expressions that will be of use to us later. 
+
+The velocity vector has the components as follows:
+
+\begin{equation}
+\vec{u} = u_r \hat{e}_r + u_\theta \hat{e}_\theta + u_z \hat{e}_z
+\end{equation}
+
+The operator $\vnabla$ is defined as:
+
+\begin{equation}
+\vnabla = \frac{\partial}{\partial r} \hat{e}_r + \frac{1}{r} \frac{\partial}{\partial \theta} \hat{e}_\theta + \frac{\partial}{\partial z} \hat{e}_z
+\end{equation}
+
+Remember the following relations before applying the operator directly:
+
+\begin{equation}
+{\partial \hat{e}_r \over \partial \theta} = \hat{e}_\theta
+\end{equation}
+
+\begin{equation}
+{\partial \hat{e}_\theta \over \partial \theta} = -\hat{e}_r
+\end{equation}
+
+\subsection{Continuity equation}
+
+Divergence of the velocity vector or continuity equation for an incompressible fluid is written as:
+
+\begin{equation}
+{1 \over r}{\partial \left( r u_r\right) \over \partial r} + {1 \over r}{\partial u_\theta \over \partial \theta} + {\partial u_z \over \partial z} = 0
+\end{equation}
+
+\subsection{Other operators}
+
+The curl of velocity vector is given by the following:
+
+\begin{equation}
+\vnabla \times \vec{u} = \left[ {1 \over r}{\partial u_z \over \partial \theta} - {\partial u_\theta \over \partial z} \right] \hat{e}_r + \left[ {\partial u_r \over \partial z} - {\partial u_z \over \partial r} \right] \hat{e}_\theta + {1 \over r} \left[ {\partial \left( r u_\theta\right) \over \partial r} - {\partial u_r \over \partial \theta} \right] \hat{e}_z
+\end{equation}
+
+Laplacian operator for a scalar function can be given as:
+
+\begin{equation}
+\nabla^2 = {1 \over r} {\partial \over \partial r} \left( r {\partial \over \partial r} \right) + {1 \over r^2} {\partial^2 \over \partial \theta^2} + {\partial^2 \over \partial z^2}
+\end{equation}
+
+\begin{equation}
+\vec{u} \cdot \vnabla = u_r \frac{\partial}{\partial r} + \frac{u_\theta}{r} \frac{\partial}{\partial \theta} + u_z \frac{\partial}{\partial z}
+\end{equation}
+
+
+\subsection{Stress components}
+
+Normal and shear stresses for constant density and viscosity are given as follows:
+
+\begin{equation}
+\sigma_{rr} = -p + 2 \mu {\partial u_r \over \partial r}
+\end{equation}
+
+\begin{equation}
+\sigma_{\theta \theta} = -p + 2 \mu \left[ {1 \over r} {\partial u_\theta \over \partial \theta} + {u_r \over r} \right]
+\end{equation}
+
+\begin{equation}
+\sigma_{zz} = -p + 2 \mu {\partial u_z \over \partial z}
+\end{equation}
+
+\begin{equation}
+\tau_{r\theta} = \mu \left[ r {\partial \over \partial r} \left( {u_\theta \over r} \right) + {1 \over r} {\partial u_r \over \partial \theta} \right]
+\end{equation}
+
+\begin{equation}
+\tau_{\theta z} = \mu \left[ {\partial u_\theta \over \partial z} + {1 \over r} {\partial u_z \over \partial \theta} \right]
+\end{equation}
+
+\begin{equation}
+\tau_{rz} = \mu \left[ {\partial u_r \over \partial z} + {\partial u_z \over \partial r} \right]
+\end{equation}
+
+
+\subsection{Navier-Stokes equations in cylindrical co-ordinate system}
+
+Most of the time we are concerned about incompressible fluids of approximately constant properties. Hence we can borrow the N-S equations in cylindrical co-ordinate system for momentum transfer with these assumptions as reproduced below:
+
+In these equations, kinematic viscosity $\nu \equiv { \mu / \rho}$ is used to simplify expressions.
+
+\begin{align}
+\frac{\partial u_r}{\partial t} + u_r \frac{\partial u_r}{\partial r} + \frac{u_\theta}{r} \frac{\partial u_r}{\partial \theta} + u_z \frac{\partial u_r}{\partial z} - \frac{u_\theta^2}{r} = F_r -\frac{1}{\rho}\frac{\partial p}{\partial r} \nonumber \\
++ \nu \left[ \frac{\partial}{\partial r}\left(\frac{1}{r} \frac{\partial \left\{r u_r\right\}}{\partial r} \right) + \frac{1}{r^2}\frac{\partial^2 u_r}{\partial \theta^2} - \frac{2}{r^2}\frac{\partial u_\theta}{\partial \theta} + \frac{\partial^2 u_r}{\partial z^2} \right] 
+\end{align}
+
+\begin{align}
+\frac{\partial u_\theta}{\partial t} + u_r \frac{\partial u_\theta}{\partial r} + \frac{u_\theta}{r} \frac{\partial u_\theta}{\partial \theta} + \frac{u_r u_\theta}{r} + u_z \frac{\partial u_\theta}{\partial z} = F_\theta -\frac{1}{\rho r}\frac{\partial p}{\partial \theta} \nonumber \\
++ \nu \left[ \frac{\partial}{\partial r}\left(\frac{1}{r} \frac{\partial \left\{r u_\theta\right\}}{\partial r} \right) + \frac{1}{r^2}\frac{\partial^2 u_\theta}{\partial \theta^2} + \frac{2}{r^2}\frac{\partial u_r}{\partial \theta} + \frac{\partial^2 u_\theta}{\partial z^2} \right] 
+\end{align}
+
+\begin{align}
+\frac{\partial u_z}{\partial t} + u_r \frac{\partial u_z}{\partial r} + \frac{u_\theta}{r} \frac{\partial u_z}{\partial \theta} + u_z \frac{\partial u_z}{\partial z} = F_z-\frac{1}{\rho}\frac{\partial p}{\partial z} \nonumber \\
++ \nu \left[ \frac{1}{r} \frac{\partial}{\partial r}\left( r \frac{\partial u_z}{\partial r} \right) + \frac{1}{r^2}\frac{\partial^2 u_z}{\partial \theta^2} + \frac{\partial^2 u_z}{\partial z^2} \right] 
+\end{align}
+
+
+%------ end of NSCylindrical.tex -----------------

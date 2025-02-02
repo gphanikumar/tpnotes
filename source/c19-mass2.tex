@@ -1,0 +1,326 @@
+\section{Species balance equation}
+
+The derivation that follows is based on what is found in the first few pages of
+the book by de Groot and Mazur~\cite{degroot}.
+
+The symbols used are as follows: 
+\begin{itemize}
+ \item $\rho_k$ is the density of species $k$ in \si{\kilo\gram\per\meter\cubed}. This is the
+default unit of concentration unless otherwise specified in most of the
+subjects.
+\item $\vec{u}_k$ is the velocity of the species $k$.
+\item $N$ is the total number of species in the domain considered.
+\item $R$ is the total number of reactions that take place in the domain.
+\item In $j^\text{th}$ reaction, the rate of production of species $k$ is given
+by $\kappa_{jk} Q_j$.
+\item $Q_j$ is the chemical reaction rate of $j^\text{th}$ reaction in
+\si{\kgpmcps}. 
+\item The coefficients $\kappa_{kj}$ are taken as positive for the product
+species and negative for the reacting species in the $j^\text{th}$ reaction.
+\end{itemize}
+
+The total density $\rho$ at any location is given by:
+
+$$ \rho = \sum_{k=1}^{N}{\rho_k} $$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\fbox{ %begin minipage frame
+\begin{minipage}{6 in}
+As an example, take the reduction of wustite by hydrogen to produce iron. Let
+this be the $j^\text{th}$ reaction.
+$$ \text{FeO} + \text{H}_2 \rightarrow \text{Fe} + \text{H}_2\text{O} $$
+
+Using the molar weights in \si{\gram\per\mole} and a subscript $k$ to indicate
+the number of the species - total $N$ being 4 here. 
+
+
+$MW_1 \equiv MW_\text{FeO} =71.84$ \\
+$MW_2 \equiv MW_{\text{H}_2} = 2$ \\
+$MW_3 \equiv MW_\text{Fe} = 55.84$ \\
+$MW_4 \equiv MW_{\text{H}_2\text{O}} = 18$ \\
+
+$$\kappa_{j1} =  -{MW_1 \over MW_1 + MW_2} $$
+
+We can write the equation with the coefficients as:
+
+$$\SI{0.973}{\gram} \, \text{FeO} + \SI{0.027}{\gram} \, \text{H}_2 \rightarrow
+\SI{0.756}{\gram} \, \text{Fe} + \SI{0.244}{\gram} \, \text{H}_2\text{O} $$ 
+
+So that, $\kappa_{j1} = -0.973$, $\kappa_{j2} = -0.027$, $\kappa_{j3} = 0.756$
+and $\kappa_{j4} = 0.244$.
+
+Conservation of mass requires the following:
+$$ \kappa_{j1} + \kappa_{j2} + \kappa_{j3} + \kappa_{j4} = 0 $$
+\end{minipage}
+} % end of minipage frame
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We notice that in the $j^\text{th}$ reaction the following equation implies
+conservation of mass.
+
+$$ \sum_{k=1}^{N}{\kappa_{jk}} = 0$$
+
+Let $s_{kj}$ be the rate of production of $k^\text{th}$ species due to
+$j^\text{th}$ reaction. 
+The total production rate of $k^\text{th}$ species is given by:
+$$ q_k = \sum_{k=1}^{N}{s_{kj}} $$
+
+We can note that for each reaction $j$, $s_{jk} = \kappa_{jk}Q_j$. Thus,
+
+$$ q_k = \sum_{k=1}^{N}{\kappa_{jk}Q_j} $$
+
+Let $\vec{j}_k$ be the flux of species $k$ across the faces of the control
+volume.
+
+Consider a control volume with $dV$ as the volume and $dS$ as the surface area
+in the domain fixed in space. $\hat{n}$ is the normal to each surface element.
+The control
+volume contains all the $N$ number of species with their respective
+concentrations given by $\rho_k$. The change in the concentration of any
+$k^\text{th}$ species is either due to an inward flux of that species from the
+surface of the control volume or due to its generation from any of the $R$
+reactions that are possible in the domain. Thus, we can write the balance of
+mass for every $k^\text{th}$ species in the domain as follows:
+
+$$ \int_{V}{ {\partial \rho_k \over \partial t} dV} = - \int_{S}{ \vec{j}_k
+\cdot
+\hat{n} dS} + \int_{V}{q_k dV} $$
+
+We can express the flux of a species using the velocity of that species as
+
+$$\vec{j}_k = \rho_k \vec{u}_k$$
+
+Substituting,
+
+$$ \int_{V}{ {\partial \rho_k \over \partial t} dV} = - \int_{S}{ \rho_k
+\vec{u}_k \cdot \hat{n} dS} + \int_{V}{\sum_{j=1}^{R}{\kappa_{jk}Q_j} dV} $$
+
+Using the Gauss theorem to convert the surface integral to volume integral, we
+obtain
+
+$$ \int_{V}{ {\partial \rho_k \over \partial t} dV} = - \int_{V}{ \vnabla \cdot
+\left(\rho_k \vec{u}_k \right) dV} + \int_{V}{\sum_{j=1}^{R}{\kappa_{jk}Q_j} dV}
+$$
+
+Since this is valid for every control volume at every location in the domain, we
+can write:
+
+\begin{equation}
+\label{rhokuk1}
+\boxed{
+ {\partial \rho_k \over \partial t}  = - { \vnabla \cdot \left(\rho_k \vec{u}_k
+\right) } + \sum_{j=1}^{M}{\kappa_{jk}Q_j}
+}
+\end{equation}
+
+\subsection{Continuity Equation}
+ 
+We can now retrieve continuity equation that expresses the balance of mass from
+the above species balance equation.
+
+
+The above equation is also true for every species. So we can sum it up over all
+the $N$ species.
+
+$$ \sum_{k=1}^{N}{\partial \rho_k \over \partial t}  = - \sum_{k=1}^{N}{ \vnabla
+\cdot \left(\rho_k \vec{u}_k \right) } +
+\sum_{k=1}^{N}{\sum_{j=1}^{R}{\kappa_{jk}Q_j} } $$
+
+Re-arranging the last term by taking $Q_j$ common and using the definition of
+total density:
+
+$$ {\partial \rho \over \partial t}  = - \sum_{k=1}^{N}{ \vnabla \cdot
+\left(\rho_k \vec{u}_k \right) } + \sum_{j=1}^{R} {Q_j
+\sum_{k=1}^{N}{\kappa_{jk} } } $$
+
+Recognizing that the sum of $\kappa_{jk}$ over any $j^\text{th}$ reaction is
+zero:
+
+$$ {\partial \rho \over \partial t}  = - \sum_{k=1}^{N}{ \vnabla \cdot
+\left(\rho_k \vec{u}_k \right) } $$
+
+We now define the {\em barycentric velocity} or the {\em velocity of the centre
+of mass} as follows:
+
+$$ \vec{u} = { \sum_{k=1}^{N}{\rho_k \vec{u}_k} \over \sum_{k=1}^{N}{\rho_k}} =
+{1 \over \rho} \sum_{k=1}^{N}{\rho_k \vec{u}_k} $$
+
+Substituting this definition, the balance of mass comes to a form that is
+familiar from the continuity equation:
+
+$$ {\partial \rho \over \partial t}  = - \vnabla \cdot \left( \rho \vec{u}
+\right) $$
+
+Using the definition of substantial / material derivative,
+
+$$ {\partial \rho \over \partial t} + \left( \vec{u} \cdot \vnabla \right) \rho 
+= {D \over Dt} \rho =  - \rho \left( \vnabla \cdot \vec{u} \right) $$
+
+\subsection{Diffusional flux}
+
+We define {\it Diffusional flux} of a species as due to difference in the
+velocity of the species from the velocity of the centre of mass.
+
+We revisit equation~\ref{rhokuk1} by substituting {\em diffusional flux} of the
+$k^\text{th}$ species as defined below:
+
+\begin{equation}
+ \label{diffluxdef}
+\boxed{
+\vec{J}_k = \rho_k \left( \vec{u}_k - \vec{u} \right) = \rho_k \vec{u}^*_k
+}
+\end{equation}
+
+
+Here, $\vec{u}^*_k$ is the velocity of the species {\bf relative} to the centre of mass.
+
+
+$$ {D \rho_k \over D t} = - \rho_k \vnabla \cdot \vec{u} - \vnabla \cdot
+\vec{J}_k + \sum_{j=1}^{M}{ \kappa_{jk} Q_j } $$
+
+Defining mass fraction $c_k = {\rho_k / \rho}$, we can write the following
+balance of mass for each of the $k^\text{th}$ species:
+
+\begin{equation}
+ \label{mconv1}
+\boxed{
+\rho {D c_k \over D t} = - \vnabla \cdot \vec{J}_k + \sum_{j=1}^{M}{ \kappa_{jk}
+Q_j } 
+}
+\end{equation}
+
+Summing up equation~\ref{diffluxdef} over all species, we can conclude that:
+
+$$ \sum_{k=1}^{N}{\vec{J}_k} = 0 $$
+
+In other words, of the $N$ equations for the fluxes, only $N-1$ are independent.
+
+\subsection{Ficks Law}
+
+We now seek a linear constitutive relation to determine $\vec{J}$. Refer to the
+section 43.14 of Feynman Lecture Series for more discussion at this point. Flux
+of a species is usually expressed as a product of composition of that species
+and the velocity of that species. Diffusional flux, however, is expressed as a product of composition and the velocity of the species relative to the center of mass.
+
+$$ \vec{J}_k = (\vec{u}_k - \vec{u}) \rho_k = \vec{u}^*_k \rho_k $$
+
+
+If velocity of a species relative to the centre of mass is the effect, 
+then the cause is a gradient in chemical potential - meaning that atoms move to
+reduce the free energy of the system. The quantity that connects  a cause and 
+effect is a material property and one can use relevant theories to deduce 
+the minimum number of entities necessary to represent that property.
+
+$$ \vec{u}^* = - M \vec{\nabla} \mu_k $$
+
+In solid state diffusion, typically one considers that the center of mass is not moving ie., $\vec{u} = 0$ or 
+$\vec{u}_k = \vec{u}^*_k$. Thus the typical form in which the above equation is often seen is:
+
+$$ \vec{u}_k  = - M \vec{\nabla} \mu_k $$
+
+$M$ is called the \textbf{mobility tensor}. Using Onsager's reciprocal
+relations~\cite{onsager1, onsager2}, one can say that $M$ is a symemtric tensor.
+It is isotropic for isotropic media. For our discussion, we are usually limited
+to liquids, gases, polycrystalline materials that can be approximated to
+istotropic media.
+
+$$ \vec{J}_k = -M \rho_k \vec{\nabla} \mu_k $$
+
+Using an ideal solution approximation,
+
+$$\mu = \mu_0 + RT \ln {X\gamma} = \mu_0 + RT \left( \ln X  + \ln \gamma
+\right)$$
+
+Where, $X$ is mole fraction and is proportional to $C$ and $\gamma$ is the
+activity of the species in the solution. 
+We now look at the form of diffusion equation in one dimension rectangular coordinate system for simplicity.
+
+$$ -M \rho_k {\partial \mu \over \partial x} = - M \rho_k {\partial \mu \over \partial
+\rho_k}{\partial \rho_k \over \partial x} = -M{\partial \mu \over \partial \ln \rho_k}{\partial
+\rho_k \over \partial x} $$
+
+Since composition can be related to atom fraction $X_k$ as 
+
+$$ \rho_k = X_k M_w $$ 
+
+$${\partial \mu \over \partial \ln \rho_k} = {\partial \mu \over \partial \ln X_k}$$
+
+$$ M{\partial \mu \over \partial \ln X_k} = MRT \left( 1 + {\partial \ln \gamma
+\over \partial \ln X_k} \right) = D_k $$
+
+Where, $D_k$ is the diffusivity of the solute $k$ in the solution. Thus, the Fick's
+first law of solute diffusion goes as
+\begin{equation}
+\boxed{
+  \vec{J}_k = -D_k {\partial \rho_k \over \partial x}
+}
+\label{ficks-1}
+\end{equation}
+
+\subsection{Diffusion equation}
+
+Substituting the same in the balance equation,
+
+\begin{equation}
+{\partial \rho_A \over \partial t} + \left( \vec{u} \cdot \vec{\nabla} \right) \rho_A =
+\vec{\nabla} \cdot \left( D {\partial \rho_A \over \partial x} \right) + \sum_{j=1}^{r}{\kappa_{Aj}Q_j}
+\end{equation}
+
+Assuming the $D$ is constant over the range of variation of $\rho_A$, absence of any
+generation term and that the domain is solid and the species A is dilute enough that $\rho_A$ is very small corresponding to $\rho$, we get the Fick's second law of
+solute diffusion
+
+\begin{equation}
+\boxed{
+{\partial \rho_A \over \partial t} = D \nabla^2 \rho_A
+}
+\end{equation}
+
+This is called as the Diffusion equation or Fick's second law of diffusion.
+
+\subsection{Diffusivity}
+
+Unlike the relevant properties for momentum and heat transfer, the kind of
+diffusivity to be used depends on the situation of mass transfer problem.
+Following are some examples.
+
+\begin{itemize}
+\item \textbf{Diffusivity in gas}: Using kinetic theory of gases,
+$$D_{AA} = {1 \over 3} \lambda u$$
+Where, $\lambda$ is mean free path and $u$ is the average velocity of the atoms
+in the gas.
+$$\lambda = {k_B T \over \sqrt{2} \pi \sigma_A^2 \rho}$$
+$$ u = \sqrt{8 k_B N T \over \pi M_A}$$
+Thus, the diffusivity in gas goes as $T^{3/2}$.
+
+\item \textbf{Diffusivity in gas entrapped in a pore}: In case the gas is
+entrapped in a pore, instead of the mean free path from the kinetic theory of
+gases, we are supposed to use the pore diameter. This means the temperature
+dependence of Diffusivity goes as $T^{1/2}$.
+
+\item \textbf{Liquid Diffusivity}: Using the Einstein equation,
+$$k_B T = 6 \pi r_A \mu_B D_{AB}$$
+
+\item \textbf{Solid Diffusivity}: Arrhenius variation
+
+$$ D  = D_0 e^{-Q \over RT} $$
+
+The activation energy for Diffusion in solid $Q$ depends on the way diffusion
+takes place and following are some situations where they are different:
+
+\begin{itemize}
+\item Diffusion aided by non-equilibrium defect concentration eg., due to
+quenched-in vacancies
+\item Pipe diffusion aided by dislocations
+\item Grain boundary aided diffusion
+\item Surface diffusion
+\item Stress induced diffusion
+\item Bulk diffusion
+\end{itemize}
+
+\end{itemize}
+
+
+

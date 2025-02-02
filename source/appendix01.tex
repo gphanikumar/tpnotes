@@ -1,0 +1,37 @@
+\appendix
+
+\chapter{Derivations}
+
+% ---------------------------------------------------------------------------
+
+\section{The quotient rule}
+\label{quotientrule}
+
+Adapted from section 2.62 of \cite{aris}.
+
+Let $b_{i}$ be {\bf any} vector and $a_{ij}$ be a matrix of nine numbers ($i,j = 1,2,3$). If a relation could be found such that $ a_{ij} b_i = c_j $ is vector, then $a_{ij}$ is a tensor of order 2.
+
+Consider a co-ordinate transformation with the tranformation matrix $T_{ij}$. Since $b$ and $c$ are vectors,
+\begin{equation}
+\begin{array}{ccc}
+b_p^* = T_{pi} b_i & \mathrm{or} & b_i = T_{pi} b_p^* 
+\end{array}
+\end{equation}
+
+
+$$ c_q^* = T_{qj} c_j $$
+
+In the new co-ordinate system:
+$$ a_{pq}^* b_p^* = c_q^* = T_{qj} c_j = T_{qj} a_{ij} b_i = T_{qj} a_{ij} T_{pi} b_p^* $$
+
+$$ ( a_{pq}^* - T_{pi} T_{qj} a_{ij} ) b_p^* = 0 $$
+
+Since $b_p^*$ is only the arbitrary vector $b_i$ in new co-ordinate system which is independent of $a_{ij}$ the only way the above equation can hold is if  
+
+$$ a_{pq}^* = T_{pi} T_{qj} a_{ij}  $$
+
+which is the definition for the entity $a_{ij}$ to be a tensor of order two.
+
+%-------------------------------------------------------------------------
+
+

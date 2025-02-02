@@ -1,0 +1,30 @@
+\section{Levi-Civita tensor is isotropic}
+\label{levicivitaisotropic}
+
+Adapted from section 2.7 of \cite{aris}.
+
+Since $\epsilon_{ijk}$ is a tensor of order 3, for an arbitrary co-ordinate transformation $T_{ij}$ ,
+
+
+\begin{equation}
+T_{ip} T_{jq} T_{kr} \epsilon_{ijk} = \left|
+\begin{array}{ccc}
+T_{1p} & T_{1q} & T_{1r} \\
+T_{2p} & T_{2q} & T_{2r} \\
+T_{3p} & T_{3q} & T_{3r}
+\end{array}
+\right|
+\end{equation}
+
+In the above determinant, if $p=q$ or $p=r$ or $q=r$, two columns being same will make the R.H.S. go to 0.
+If $p$, $q$ and $r$ are cyclic (e.g., $1,2,3$) then the R.H.S. is the determinant of the transformation matrix itself which is 1.
+If $p$, $q$ and $r$ are anti-cyclic (e.g., $1,3,2$), then the R.H.S. is the determinant of the transformation matrix (with two rows interchanged) which is -1.
+
+These are the values defined for $\epsilon_{pqr}$. Hence the R.H.S. can be equated to $\epsilon_{pqr}^*$. Thus,
+
+$$\epsilon_{pqr}^* = T_{ip} T_{jq} T_{kr} \epsilon_{ijk} $$
+
+Since the above result is applicable for {\bf any} $T_{ij}$, $\epsilon_{ijk}$ is isotropic.
+
+% -----------------------------------------------------------------------------------------
+

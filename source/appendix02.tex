@@ -1,0 +1,98 @@
+\section{Symmetric tensors are diagonalisable}
+\label{diagonalisable}
+
+Adapted from section 2.5 of \cite{aris}.
+
+If $a_{ij}$ is a tensor and $b_i$ is an arbitrary vector then by quotient rule, $c_j = a_{ij}b_i$ is a vector. For some $b_i$, the vector $c_i$ could be in the same orientation such that if $\lambda$ is the ratio of their magnitudes, $a_{ij} b_i = \lambda b_j = \lambda \delta_{ij} b_i$ . 
+
+$$ \left( a_{ij} - \lambda \delta_{ij} \right) b_i = 0 $$
+
+This is a set of three unknowns ($a_1$, $a_2$ and $a_3$) and for a solution to exist, $\lambda$ must satisfy the following equation:
+
+$$ det \left( a_{ij} - \lambda \delta_{ij} \right) = 0 $$
+
+$$ \lambda^3 - X \lambda^2 + Y \lambda - Z = 0$$
+
+$$ X = a_{ii} = \mathrm{Trace}(a_{ij}) $$
+
+$$ Y = a_{22}a_{33} - a_{23}a_{32} + a_{11}a_{33} - a_{13}a_{31} + a_{22}a_{11} - a_{12}a_{21} $$
+
+$$ Z = det (a_{ij}) $$
+
+$X$, $Y$ and $Z$ are three invariants of $a_{ij}$ under rotation of co-ordinate system.
+
+The above is called the characteristic equation of the tensor $a_{ij}$ and the three values of $\lambda$ its characteristic values / latent roots / eigen values.
+
+For the three eigen values $\lambda_{(p)}, p=1:3$, the corresponding characteristic vectors (${b_i}_{(p)}, p=1:3$ be denoted as $T_{j1}$, $T_{j2}$ and $T_{j3}$. 
+
+
+\begin{equation}
+T = \left(
+\begin{array}{ccc}
+{b_1}_{(1)} & {b_1}_{(2)} & {b_1}_{(3)} \\
+{b_2}_{(1)} & {b_2}_{(2)} & {b_2}_{(3)} \\
+{b_3}_{(1)} & {b_3}_{(2)} & {b_3}_{(3)} 
+\end{array}
+\right) = \left(
+\begin{array}{ccc}
+T_{11} & T_{12} & T_{13} \\
+T_{21} & T_{22} & T_{23} \\
+T_{31} & T_{32} & T_{33} \\
+\end{array}
+\right)
+\end{equation}
+
+\begin{equation}
+\begin{array}{l}
+a_{ij}T_{j1} = \lambda_1 T_{i1} \\
+a_{ij}T_{j2} = \lambda_2 T_{i2}
+\end{array}
+\end{equation}
+
+Multiply the first equation with $T_{i2}$ and the second equation with $T_{i1}$.
+
+\begin{equation}
+\begin{array}{l}
+a_{ij}T_{j1} T_{i2} = \lambda_1 T_{i1} T_{i2} \\
+a_{ij}T_{j2} T_{i1} = \lambda_2 T_{i2} T_{i1}
+\end{array}
+\end{equation}
+
+Transpose the second equation (swap the indices $i$ and $j$ in second equation):
+
+\begin{equation}
+\begin{array}{l}
+a_{ij}T_{j1} T_{i2} = \lambda_1 T_{i1} T_{i2} \\
+a_{ji}T_{i2} T_{j1} = \lambda_2 T_{j2} T_{j1}
+\end{array}
+\end{equation}
+
+If $a_{ij}$ is {\bf symmetric}, then
+
+\begin{equation}
+\begin{array}{l}
+a_{ij}T_{j1} T_{i2} = \lambda_1 T_{i1} T_{i2} \\
+a_{ij}T_{i2} T_{j1} = \lambda_2 T_{j2} T_{j1}
+\end{array}
+\end{equation}
+
+ie.,
+
+$$ a_{ij}T_{j1} T_{i2} = \lambda_1 T_{i1} T_{i2}  = \lambda_2 T_{j2} T_{j1} $$
+
+Since $\lambda_1$ and $\lambda_2$ are distinct, the above equation can be true only if 
+
+\begin{equation}
+\begin{array}{l}
+T_{i1} T_{i2}  = \delta_{ij}
+\end{array}
+\end{equation}
+
+If we choose a co-ordinate transformation with the transformation matrix to contain the elements of $T_{ij}$ made out of the three eigen vectors,
+
+$$ a_{pq}^* = T_{ip}T_{jq} a_{ij} = \lambda_p T_{ip}T_{iq} = \lambda_p \delta_{pq} $$
+
+ie., $a_{pq}$ is diagonal. 
+
+
+% ---------------------------------------------------------------------------

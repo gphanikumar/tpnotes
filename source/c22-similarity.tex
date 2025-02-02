@@ -1,0 +1,177 @@
+\chapter{Similarity across transport phenomena}
+
+\section{Learning objectives}
+
+At the end of this lesson, a student should be able to 
+
+\begin{enumerate}
+\item look up correlations of h-factors to determine unknown parameters of one transport phenomena from known parameters of another transport phenomena
+\end{enumerate}
+
+% -----------------------------------------------------
+
+\section{Reynold's analogy}
+
+% -----------------------------------------------------
+
+\section{Chilton-Colburn analogy}
+
+In case the transport properties are known for one quantity (say, heat) and we
+are interested in the transport of another quantity (say, solute), we can make
+use of the similarity expressions thanks to the fact that under laminar
+conditions and when fully developed profiles are present, similarity relations
+are valid.
+
+The problem is to connect friction factor, heat transfer coefficient and mass
+transfer coefficient at an interface. 
+
+If the velocity, temperature and solute profiles are fully developed, then the
+following three expressions will all be the same functions (eg., parabolas for a
+tube):
+
+$$ {v \over v_\infty} = {T - T_s \over T_\infty - T_s} = {C_A - C_{A0} \over
+C_{A,\infty} - C_{A0}} $$
+
+Equating the slopes at the interface since the profiles are the same:
+
+$$ \left. {\partial \over \partial x} {v \over v_\infty} \right|_{x \rightarrow
+0} = \left. {\partial \over \partial x} {T - T_s \over T_\infty - T_s}\right|_{x
+\rightarrow 0} = \left. {\partial \over \partial x} {C_A - C_{A0} \over
+C_{A,\infty} - C_{A0}}\right|_{x \rightarrow 0} $$
+
+Take the case of a hypothetical fluid that has $Pr=Sc=1$ ie.,
+
+$$ { \mu C_p \over k} = {\mu \over \rho D_{AB} } = 1$$
+
+or
+
+$$ \mu = {k \over C_p} = \rho D_{AB}$$
+
+Multiply these quantities with the respective slopes of the profiles as:
+
+$$ \left. \mu {\partial \over \partial x} {v \over v_\infty} \right|_{x
+\rightarrow 0} = \left. {k \over C_p} {\partial \over \partial x} {T - T_s \over
+T_\infty - T_s}\right|_{x \rightarrow 0} = \left. \rho D_{AB} {\partial \over
+\partial x} {C_A - C_{A0} \over C_{A,\infty} - C_{A0}}\right|_{x \rightarrow 0}
+$$
+
+$$ {\tau \over v_\infty} = {q \over C_p(T_\infty - T_s)} = {\rho j_A \over
+(C_{A\infty} - C_{A0})} $$
+
+Dividing each quantity with $\rho v_\infty$, 
+
+$$ {1 \over 2} {\tau \over {1 \over 2} \rho v^2_\infty} = {q \over \rho C_p
+(T_\infty - T_s) v_{\infty}} = {j_A \over (C_{A\infty} - C_{A0}) v_\infty} $$
+
+Recognize the following quantities:
+
+Skin friction coefficient: 
+$$ {\tau \over { {1 \over 2} \rho v^2_\infty}} = f$$
+
+Heat transfer coefficient:
+$$ {q \over (T_\infty - T_s)} = h$$
+
+Mass transfer coefficient:
+$${j_A \over (C_{A\infty} - C_{A0})} = k_A$$
+
+$$ {f \over 2} = {h \over \rho C_p v_\infty} = {k_A \over v_\infty}$$
+
+We define Stanton number as:
+
+$$St = {h \over \rho C_p v_\infty}$$
+
+The following analogy is called as Reynold's analogy:
+
+$$ \boxed{
+{f \over 2} = St = {k_A \over v_\infty}
+}$$
+
+Chilton-Colburn realized that the above expression can be made to be applicable
+even when $Pr$ and $Sc$ are not unity but for a range of $0.6 < Pr < 100$ and
+$0.6 < Sc < 2500 $ provided a correction factor of $Pr^{2 \over 3}$ for heat
+transfer and $Sc^{2 \over 3}$ for mass tranfer are used:
+
+$$ \boxed{
+{f \over 2} = St Pr^{2 \over 3} = {k_A \over v_\infty} Sc^{2 \over 3}
+}$$
+
+Each of the above three quantities are called as \textbf{j-factors}.
+
+$$j_H = St Pr^{2 \over 3} = {h \over \rho C_p v_\infty} Pr^{2 \over 3}$$
+
+$$j_D = {k_A \over v_\infty} Sc^{2 \over 3} $$
+
+In situations where the analogy is applicable, one can obtain the mass transfer
+coefficient from the heat transfer coefficient or the skin friction factor by
+using the above analogy and the appropriate property values.
+
+\textbf{Evaporative heat flux}
+
+Dry air at \SI{40}{\celsius} flows on surface of water. Due to evaporative loss, the surface temperature of water dips. Estimate the drop in temperature of the surface of water. 
+
+{\bf Properties:}\\
+Density of air at \SI{40}{\celsius} can be taken as $\rho$ = \SI{1.133}{\kilo\gram\per\meter\cubed} \\
+Molar weight of water vapor: $M$ = \SI{0.018}{\kilo\gram\per\mole} \\
+Heat of evaporation : $\Delta H$ = \SI{3.338e5}{\joule\per\kilo\gram} \\
+Heat capacity of air: $C_p$ = \SI{1005}{\joule\per\kilo\gram\per\kelvin} \\
+Vapor pressure of air in Pascals: $\ln p^0 = {-6679 \over T} - 4.65 \ln T + 56.97$ \\
+Lewis number of air under given conditions: $Le = 1.1$ \\
+
+
+{\bf Solution}:
+
+$$ St = {h \over \rho C_p u_\infty} $$
+
+Taking a ratio of second and third terms of the Chilton-Colburn analogy, we get
+
+$$ {h \over k_m} = \rho C_p \left( Sc \over Pr \right)^{2/3} = \rho C_p Le^{2/3}$$
+
+We can assume that water vapour behaves like ideal gas here. Assuming the equation of state for ideal gas, the concentration of water vapour in moles per unit volume is given by
+
+$$ \dot{n} = {n \over V} = {p \over RT}$$
+
+Evaporative loss of moles of water = difference in concentration of water vapour on surface of water and in the air that is flowing. Since the air is given as dry, we can take the evaporative loss in moles per unit area per unit time using mass transfer coefficient $k_m$ as follows.
+
+$$ \dot{N} = k_m \left[ \left. \dot{n}\right|_{T=T_s} -  \left. \dot{n}\right|_{T=T_\infty}\right] $$
+
+At the surface of water, 
+
+$$ \left. \dot{n}\right|_{T=T_s} =  \left. {p^0 \over RT} \right|_{T=T_s} = {1 \over R T_s} \exp \left( {-6679 \over T_s} - 4.65 \ln T_s + 56.97 \right)$$
+
+Far away from the surface of water, the air is dry.
+$$ \left. \dot{n}\right|_{T=T_\infty} =  \left. {0 \over RT} \right|_{T=T_\infty} $$
+
+Combining the equations above,
+
+$$ \dot{N} = k_m \left[ {1 \over R T_s}\exp \left( {-6679 \over T_s} - 4.65 \ln T_s + 56.97 \right) - {1 \over R T_\infty} 0\right]$$
+
+Heat loss because of this mass flux is given by
+
+$$ M \, \Delta H \, \dot{N} $$
+
+This heat loss is same as given by heat transfer coefficient namely
+
+$$ h \left( T_\infty - T_s \right) $$
+
+Taking these two as equivalent,
+
+$$ M \, \Delta H \,  k_m \left[ {1 \over R T_s} \exp \left( {-6679 \over T_s} - 4.65 \ln T_s + 56.97 \right) \right] = h \left( T_\infty - T_s \right) $$
+
+$$ M \, \Delta H \, \left({k_m \over h}\right) {1 \over R T_s} \exp \left( {-6679 \over T_s} - 4.65 \ln T_s + 56.97 \right) = \left( 313 - T_s \right) $$
+$$ T_s = 313 - M \, \Delta H \, {1 \over \rho C_p Le^{2/3}} {1 \over R T_s} \exp \left( {-6679 \over T_s} - 4.65 \ln T_s + 56.97 \right) $$
+
+$$ T_s = 313 - {0.595 \over T_s} \exp \left( {-6679 \over T_s} - 4.65 \ln T_s + 56.97 \right) $$
+
+Using initial guess as $T_s = 300$, we can apply single point iteration scheme to find out the answer as \SI{304.1}{\kelvin}.
+
+% ------------------------------------------------
+
+\section{Summary}
+
+Expressions that convey similarity relations of relevance to Metallurgical and Materials Engineering.
+
+% ------------------------------------------------
+
+\section{Exercises}
+
+% ------------------------------------------------

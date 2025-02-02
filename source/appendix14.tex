@@ -1,0 +1,39 @@
+
+% ---------------------------------------------------------------------------
+\section{Strain rate tensor}
+
+\label{strainratetensor}
+
+Adapted from section 4.41 of \cite{aris}
+
+Consider two points P and Q at co-ordinates $\xi$ and $\xi+d \xi$. At time $t$ they are to be found at $x(\xi,t)$ and $x(\xi+d\xi,t)$.
+
+Using only the first term of Taylor's expansion,
+
+$$ x_i(\xi + d\xi, t) = x_i(\xi,t) + \frac{\partial x_i}{\partial \xi_j} d\xi_j $$
+
+So the displacement vector is
+$$ dx = x(\xi+d\xi,t) - x(\xi,t) $$
+where
+$$ dx_i = \frac{\partial x_i}{\partial \xi_j} d\xi_j $$
+
+Since $dx$ and $d\xi$ are vectors, by quotient rule, the nine quantities $\frac{\partial x_i}{\partial \xi_j}$ form the components of a tensor of order 2.
+
+Since we define velocity $v$ as $v=\frac{dx}{dt}$, the relative velocity of two fluid particles at $\xi$ and $\xi+d\xi$ is
+
+$$ du_i = \frac{\partial u_i}{\partial \xi_k} d\xi_k = \frac{d}{dt} \frac{\partial x_i}{\partial \xi_j} d \xi_j $$
+
+Using the inverse of the relation given above,
+
+$$ du_i = \frac{\partial u_i}{\partial \xi_k} \frac{\partial \xi_k}{\partial x_j} dx_j = \frac{\partial u_i}{\partial x_j} dx_j $$
+
+Once again, by quotient rule, the components of $\frac{\partial u_i}{\partial x_j}$ form a tensor or order 2. This is called velocity gradient tensor. Like any tensor of order two, velocity gradient tensor can be split into two tensors, one symmetric and one anti-symmetric.
+
+$$ \frac{\partial u_i}{\partial x_j} = \frac{1}{2} \left( \frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} \right) + \frac{1}{2} \left( \frac{\partial u_i}{\partial x_j} - \frac{\partial u_j}{\partial x_i} \right) $$
+
+We denote the symmetric part of the velocity gradient tensor as $e_{ij}$ (strain rate tensor) and the anti-symmetric part as $\Omega_{ij}$ (vorticity tensor).
+$$ \frac{\partial u_i}{\partial x_j} = e_{ij} + \Omega_{ij} $$
+
+As shown in the section \ref{strainratemeaning}, we can recognise that $e_{ij}$ represents rate of strain (both dilational and shear) and $\Omega_{ij}$ represents rigid body rotation.
+
+

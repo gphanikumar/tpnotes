@@ -1,0 +1,62 @@
+\section{Simplification of tensor properties for crystals}
+\label{cubicsimplify}
+
+Lars Onsager has proved (\cite{onsager1},\cite{onsager2}) using {\em microscopic reversibility} that for crystals with symmetries of order 3,4,6 etc., the thermal conductivity tensor is symmetric.
+
+\begin{equation}
+k_{ij} = \left(
+\begin{array}{lll}
+k_{11} & k_{12} & k_{13} \\
+k_{12} & k_{22} & k_{23} \\
+k_{13} & k_{23} & k_{33}
+\end{array}
+\right)
+\end{equation}
+
+For cubic crystals, the form of the tensors simplifies even further. Take co-ordinate system rotations about $\hat{x}_3$ by $90^0$ for which the transformation matrix is:
+
+\begin{equation}
+T = \left(
+\begin{array}{lll}
+0 & 1 & 0 \\
+-1 & 0 & 0 \\
+0 & 0 & 1
+\end{array}
+\right) 
+\end{equation}
+
+
+By definition, if $T$ is the transformation matrix of a co-ordinate axes rotation,
+
+$$ k_{ij}^* = T_{pi} T_{qj} k_{pq} $$
+
+Since the tensor in discussion is a property that should not change upon co-ordinate rotations that leave the crystal identical,
+$$ k^* = k$$
+
+Take $k_{11}$ and expand the above definition of tensor:
+
+$$k_{11} = T_{i1}T_{j2}k_{ij} = T_{21}T_{21}k_{22} = k_{22}$$
+or
+$$k_{11} = k_{22}$$
+
+Similarly,
+
+$$k_{21} = T_{i2}T_{j1}k_{ij} = T_{12}T_{21}k_{12} = -k_{12} = -k_{21}$$
+or
+$$k_{21} = k_{12} = 0$$
+
+Similarly rotating the co-ordinate system about the other two axes will show that all off diagonal terms of $k_{ij}$ vanish and all diagonal terms are same.
+
+\begin{equation}
+k_{ij} = \left(
+\begin{array}{lll}
+k_{11} & 0 & 0 \\
+0 & k_{11} & 0 \\
+0 & 0 & k_{11}
+\end{array}
+\right) = k \delta_{ij}
+\end{equation}
+
+Thus, only one value of $k$ is needed to completely specify the second order symmetric tensor property such as thermal conductivity of a cubic crystal.
+
+

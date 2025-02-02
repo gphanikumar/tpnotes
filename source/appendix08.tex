@@ -1,0 +1,39 @@
+\section{Reynold's transport theorem}
+\label{rtt}
+
+Adapted from section 4.22 of \cite{aris}.
+
+Let $f(\hat{x},t)$ be any function and $V(t)$ be a closed volume moving with the fluid ie., consisting of the same fluid particles. 
+
+$$ F(t) = \int_{V(t)}{f(\hat{x},t) dV}$$
+
+is a function of $t$ that can be calculated. We are interested in the material derivative $\frac{DF}{Dt}$. Since the integral is varying over $V(t)$, differentiation cannot be taken through the integral sign. If the differentiation is with respect to a volume in the material co-ordinate system ($\xi_1, \xi_2, \xi_3$), it would be possible to interchange differentiation and integration since  $\frac{D}{Dt}$ is differentiation with respect to time keeping $\xi$ constant.
+
+The transformation $\hat{x} = x(\xi , t)$ with $V=JdV_0$ allows us to this, for $V(t)$ has been defined as a moving material volume and so came from some fixed $V_0$ at time $t=0$.
+
+$$ \frac{D}{Dt} \int_{V(t)}{f(x,t) dV} = \frac{D}{Dt} \int_{V_0}{f(x(\xi,t),t) J dV_0} $$
+
+Since the integral is over the same volume $V_0$, we can take the differentiation operator inside the integral.
+
+\begin{equation}
+\begin{array}{rl}
+\frac{D}{Dt} \int_{V}{f(x,t) dV} & = \int_{V_0}{\left( \frac{Df}{Dt}J+f\frac{DJ}{Dt}\right) dV_0} \\
+\\
+& = \int_{V_0}{\left( \frac{Df}{Dt}+f (\nabla \cdot \vec{u}) \right) JdV_0} \\
+\\
+& = \int_{V}{\left( \frac{Df}{Dt}+f (\nabla \cdot \vec{u}) \right) dV} \\
+\end{array}
+\end{equation}
+
+Knowing that the expression for material derivative operator is:
+
+$$ \frac{D}{Dt} \equiv \frac{\partial}{\partial t} + (\vec{u} \cdot \nabla) $$
+
+$$ \frac{D}{Dt} \int_{V(t)}{f(x,t) dV} = \int_{V}{\left( \frac{\partial f}{\partial t}+ \nabla \cdot (f\vec{u}) \right) dV} $$
+
+Apply Green's theorem to the second term, with $S(t)$ as the surface of the element following the fluid flow and $\hat{n}$ as the unit normal to $S(t)$:
+
+$$ \boxed{ \frac{D}{Dt} \int_{V(t)}{f(x,t) dV} = \int_{V(t)}{\frac{\partial f}{\partial t} dV} + \int_{S(t)}{f \vec{u} \cdot \hat{n} dS} }$$
+
+Rate of change of the integral of any function $f$ within a moving element is the sum of integral of rate of change at a location and the net flow of $f$ over the surface enclosing the element.
+

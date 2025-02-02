@@ -1,0 +1,30 @@
+\section{Stress is a tensor}
+\label{stresstensor}
+
+Adapted from section 5.12 of \cite{aris} and section 1.3, pg.9 of \cite{batchelor}.
+
+Stress $\sigma$ is defined as force per unit area. Consider all the forces acting instantaneously on the fluid within an element of volume $\delta V$ in the shape of a tetrahedron. The three orthogonal faces have areas $\delta A_1$, $\delta A_2$ and $\delta A_3$ and unit outward normals as $-\hat{a}$, $-\hat{b}$ and $-\hat{c}$. The fourth inclined face has area $\delta A$ and unit normal $\hat{n}$. The resultant of surface forces is 
+
+$$ \sigma(\hat{n}) \delta A +  \sigma(-\hat{a}) \delta A_1 +  \sigma(-\hat{b}) \delta A_2 +  \sigma(\hat{c}) \delta A_3$$
+
+In view of the orthogonality of three of the faces, 
+
+$$ \delta A_1 = \hat{a} \cdot \hat{n} \delta A $$
+$$ \delta A_2 = \hat{b} \cdot \hat{n} \delta A $$
+$$ \delta A_3 = \hat{c} \cdot \hat{n} \delta A $$
+
+Thus the balance of forces along direction $i$ can be written as
+
+$$ \delta A \left[ \sigma_i(\hat{n}) - \left\{ \hat{a}_j \sigma_i(\hat{x}_1) +  \hat{b}_j \sigma_i(\hat{x}_2) +  \hat{c}_j \sigma_i(\hat{x}_3) \right\} \hat{n}_j \right] $$
+
+As we shrink the volume ($V \sim d^3$), since the area shrinks only as $S \sim d^2$, the quantity in square brackets must go to zero for local equilibrium. ie.,
+
+$$ \sigma_i(\hat{n}) =  \left\{ \hat{a}_j \sigma_i(\hat{x}_1) +  \hat{b}_j \sigma_i(\hat{x}_2) +  \hat{c}_j \sigma_i(\hat{x}_3) \right\} \hat{n}_j $$
+
+If we represent the quantity in the flower brackets on R.H.S. as $\sigma_{ij}$,
+
+$$ \sigma_i(\hat{n}) = \sigma_{ij} \hat{n}_j $$
+
+Since the {\bf vectors} $\sigma_i$ (surface force per unit area) and $\hat{n}$ (unit normal to the surface) donot depend on the choice of co-ordinate axes, the quantity connecting them $\sigma_{ij}$ must represent $(i,j)$-component of a axes-independent entity namely, a tensor of order 2. This is also true by the quotient rule of tensors.
+
+
