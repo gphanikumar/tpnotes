@@ -16,11 +16,13 @@ You can clone or fork this repo, edit the source files as you wish and use it fo
 
 If you wish to make significant contributions to this repository, you are welcome as a collaborator. Drop me a line email and I will add you here so that you can push the changes to this repo yourself.
 
-# Jupyter notebooks
+# notebooks
+
+## Sagemath +Jupyter
 
 The following notebooks use [sagemath](https://sagemath.org) kernel. You can download the ipynb file to your computer and open it in the jupyter notebook interface to play with it. Toggle the option "trust" to ensure the notebook is rendered properly.
 
-# Mathematica notebooks
+## Mathematica 
 
 The following notebooks use [mathematica](https://www.wolfram.com/mathematica) kernel. If you have a license for mathematica, you can download either the nb files and open them. Else, you can download the cdf files and open them in [Wolfram Player for Notebooks](https://www.wolfram.com/player). You can view the pdf files to see what is in there.
 
