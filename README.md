@@ -33,7 +33,7 @@ If you wish to make significant contributions to this repository, you are welcom
 
 The following notebooks use [sagemath](https://sagemath.org) kernel. You can download the ipynb file to your computer and open it in the jupyter notebook interface to play with it. Toggle the option "trust" to ensure the notebook is rendered properly.
 
-* Characteristic Polynomial [ipynb](sage-notebooks/characteristicpolynomial.ipynb)
+* Characteristic Polynomial [ipynb](sage-notebooks/CharacteristicPolynomial.ipynb)
 
 ## Mathematica 
 
