@@ -57,9 +57,14 @@ The following notebooks use [mathematica](https://www.wolfram.com/mathematica) k
 
 ## computational fluid dynamics
 
-* NPTEL course on [Computational Fluid Dynamics using Finite Volume Method](https://archive.nptel.ac.in/courses/112/106/112106294/) by Prof. Anupindi Kameswararao, IIT Madras
+* NPTEL course on [Computational Fluid Dynamics using Finite Volume Method](https://archive.nptel.ac.in/courses/112/106/112106294/) by Prof. A)nupindi Kameswararao, IIT Madras
+* A book on [Notes on computational fluid dynamics: General Principles](https://doc.cfd.direct/notes/cfd-general-principles/) by C.J. Greenshields and H.G. Weller
 
 ## openfoam
+
+* Documentation is available for [openfoam](https://openfoam.org/) including [user guide](https://doc.cfd.direct/openfoam/user-guide-v12/index), [C++ source guid](https://cpp.openfoam.org/v12/)
+* IITB has a project going on [FOSSEE](https://fossee.in/) - Free and open source software for education that includes OpenFoam
+* [OpenFoam Tutorials](https://github.com/sayin/OpenFOAM-Tutorials) forked from [Basic OpenFoam Programming Tutorials](https://github.com/UnnamedMoose/BasicOpenFOAMProgrammingTutorials)
 
 # Disclaimer
 
