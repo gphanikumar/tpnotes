@@ -42,7 +42,9 @@ The following notebooks use [sagemath](https://sagemath.org) kernel. You can dow
 
 ## Mathematica 
 
-The following notebooks use [mathematica](https://www.wolfram.com/mathematica) kernel. If you have a license for mathematica, you can download the nb files and open them. Else, you can download the cdf files and open them in [Wolfram Player for Notebooks](https://www.wolfram.com/player). You can view the pdf files to see what is in there.
+The following notebooks use [mathematica](https://www.wolfram.com/mathematica) kernel. If you have a license for mathematica, you can download the nb files and open them. Else, you can download the cdf files and open them in [Wolfram Player for Notebooks](https://www.wolfram.com/player). You can view the pdf files to see what is in there. You may need to download them in raw mode before opening them.
+
+* Simple Planer Flows [nb](mathematica-notebooks/GradFlowPattern.nb) [cdf](mathematica-notebooks/GradFlowPattern.cdf) [pdf](mathematica-notebooks/GradFlowPattern.pdf)
 
 # Further learning
 
@@ -62,7 +64,7 @@ The following notebooks use [mathematica](https://www.wolfram.com/mathematica) k
 
 ## openfoam
 
-* Documentation is available for [openfoam](https://openfoam.org/) including [user guide](https://doc.cfd.direct/openfoam/user-guide-v12/index), [C++ source guid](https://cpp.openfoam.org/v12/)
+* Documentation is available for [OpenFoam](https://openfoam.org/) including [user guide](https://doc.cfd.direct/openfoam/user-guide-v12/index), [C++ source guide](https://cpp.openfoam.org/v12/)
 * IITB has a project going on [FOSSEE](https://fossee.in/) - Free and open source software for education that includes OpenFoam
 * [OpenFoam Tutorials](https://github.com/sayin/OpenFOAM-Tutorials) forked from [Basic OpenFoam Programming Tutorials](https://github.com/UnnamedMoose/BasicOpenFOAMProgrammingTutorials)
 
