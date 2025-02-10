@@ -15,4 +15,8 @@ else
          rm -f $arg.$ext
 	done
 fi
+
+echo "removing dvi and ps files"
+rm TransportPhenomena.ps TransportPhenomena.dvi
+
 # end of clean.sh

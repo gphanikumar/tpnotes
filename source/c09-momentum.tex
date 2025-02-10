@@ -221,7 +221,16 @@ A relation between the deviatoric stress and strain-rate (velocity gradient) is 
 \item The deviatoric stress represents the frictional interaction between different layers of the fluid and is assumed to be dependent only on the instantaneous and local distribution of the velocities. 
 \end{list} 
 
-From the above observations, we may {\em assume} that the deviatoric stress and the strain-rate are directly and {\em linearly} related to each other. Since both the quantities are tensors of order two, the entity that connects them both must be a tensor of order four.
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=6 in]{images/c09-DijUijschematic.eps}
+ % ctrans.eps: 46x0 pixel, 300dpi, 0.39x0.00 cm, bb=0 35 595 420
+ \caption{Concept map of how the constitutive relation is being proposed between deviatoric stress and velocity gradient}
+ \label{dijuijlink}
+\end{figure}
+
+
+From the above observations, we may {\em assume} that the deviatoric stress and the strain-rate are directly and {\em linearly} related to each other. Let us propose, as shown in Figure~\ref{dijuijlink}, a constitutive relation between the deviatoric stress and velocity gradient. Since both the quantities are tensors of order two, the entity that connects them both must be a tensor of order four.
 
 \begin{equation}
 d_{ij} = A_{ijkl} \frac{\partial u_k}{\partial x_l}
