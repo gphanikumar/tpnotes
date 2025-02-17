@@ -38,6 +38,7 @@ The following notebooks use [sagemath](https://sagemath.org) kernel. You can dow
 * Vector Field Plots [ipynb](sage-notebooks/VectorFieldPlots.ipynb)
 * Continuity equation in Cylindrical coordinate system [ipynb](sage-notebooks/ContinuityCylindrical.ipynb)
 * Continuity equation in Spherical coordinate system [ipynb](sage-notebooks/ContinuitySpherical.ipynb)
+* Channel flow with a moving wall [ipynb](sage-notebooks/Channel-MovingPlate.ipynb)
 
 
 ## Mathematica 
