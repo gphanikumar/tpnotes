@@ -103,20 +103,20 @@ $$ \frac{D}{Dt} \int_V{H dV} = \int_{V}{g dV} - \int_{S}{ J_i n_i dS} $$
 Using equation \ref{hrhocp} and making use of Reynold's transport theorem (section \ref{rtt}) to take the material derivative inside the integral: 
 
 \begin{equation}
-  \int_V{\frac{D}{Dt} \rho C_p (T - T_\text{ref}) dV} = \int_{V}{g dV} - \int_{S}{J_i n_i dS} 
+  \int_V{\rho \frac{D}{Dt} C_p (T - T_\text{ref}) dV} = \int_{V}{g dV} - \int_{S}{J_i n_i dS} 
 \end{equation}
 
 Using the Gauss theorem to convert the surface integral to volume integral,
 
 \begin{equation}
-  \int_V{\frac{D}{Dt} \rho C_p (T - T_\text{ref}) dV} = \int_{V}{g dV} - \int_{V}{\frac{\partial J_i}{\partial x_i} dV} 
+  \int_V{\rho \frac{D}{Dt} C_p (T - T_\text{ref}) dV} = \int_{V}{g dV} - \int_{V}{\frac{\partial J_i}{\partial x_i} dV} 
 \end{equation}
 
 
 Since the integration is over the same control volume $dV$, we can equate the integrands.
 
 \begin{equation}
-\frac{D}{Dt} \rho C_p T = g - \frac{\partial J_i}{\partial x_i}
+\rho \frac{D}{Dt} C_p T = g - \frac{\partial J_i}{\partial x_i}
 \label{ebalance}
 \end{equation}
 
