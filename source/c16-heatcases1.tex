@@ -212,6 +212,18 @@ below:
 
 \subsection{Across a planar composite wall}
 
+\begin{figure}[h]
+\begin{center}
+\framebox{
+\includegraphics[scale=0.5]{images/c16-Gemini-BoxFurnace.eps}
+}
+\end{center}
+\caption{Box type multi-walled furnace schematic created using Gemini 2.0 Flash.}
+\label{boxfurnace}
+\end{figure}
+
+In the figure~\ref{boxfurnace}, the multi-walled furnace is shown schematically. The wall comprises of a ceramic layer, glass wool layer and then a steel sheet that forms the furnace box. One can estimate the heat loss through this composite wall at steady state as follows.
+
 Using the electrical analogy of the previous section, flux boundary condition
 $\frac{q}{A} = h \left(T_s - T_\infty \right)$ can be written such that the
 resistance to heat flow is $\frac{1}{Ah}$.
@@ -219,13 +231,13 @@ resistance to heat flow is $\frac{1}{Ah}$.
 At steady state, if $q$ is the rate of heat transfer ($Js^{-1}$) across a planar
 composite wall of constant area $A$:
 
-$$ \frac{q}{A} = h_b \left(T_b - T_1 \right) = 
+$$ \frac{q}{A} = h_a \left(T_a - T_1 \right) = 
       -k_{12} \frac{T_2 - T_1}{\Delta x_{12}} = 
       -k_{23} \frac{T_3 - T_2}{\Delta x_{23}} = 
       -k_{34} \frac{T_4 - T_3}{\Delta x_{34}} = 
-       h_a \left(T_4 - T_a \right) $$
+       h_b \left(T_4 - T_b \right) $$
 
-or
+In the figure~\ref{boxfschematic}, $k_{12}$ is thermal conductivity of the ceramic wall of width $\Delta x_{12}$, $k_{23}$ is thermal conductivity of the glass wool wall of width $\Delta x_{23}$, $k_{34}$ is thermal conductivity of the steel wall of width $\Delta x_{34}$. The heat transfer coefficients are $h_a$ for inner wall and $h_b$ for the outer wall. The ambient temperature is $T_b$ and the furnace temperature is $T_a$.
 
 $$ T_a - T_b = \frac{q}{A} \left[ \frac{1}{h_a} + 
                                   \frac{\Delta x_{12}}{k_{12}} +
@@ -246,7 +258,7 @@ the current). $\frac{q}{A}$ is analogous to current.
 }
 \end{center}
 \caption{Schematic thermal profile across a composite wall of a furnace. The image of the furnace was created using Gemini 2.0 Flash.}
-\label{conceptmapheatsolutions}
+\label{boxfschematic}
 \end{figure}
 
 
@@ -254,8 +266,10 @@ Using the electrical analogue of the previous section, the heat flow across a
 composite hollow cylindrical wall is given by:
 
 $$ T_a - T_b = \frac{q}{2 \pi L} \left[ \frac{1}{r_1 h_1} +
-\frac{\ln{\frac{r_1}{r_2}}}{k_{12}} + \frac{\ln{\frac{r_2}{r_3}}}{k_{23}} +
-\frac{\ln{\frac{r_3}{r_4}}}{k_{34}} + \frac{1}{r_4 h_4} \right] $$
+\frac{\ln{\frac{r_2}{r_1}}}{k_{12}} + \frac{\ln{\frac{r_3}{r_2}}}{k_{23}} +
+\frac{\ln{\frac{r_4}{r_3}}}{k_{34}} + \frac{1}{r_4 h_4} \right] $$
+
+The radial distances of the walls from the centre for the tubular furnace are given as $r_1$, $r_2$ etc., The length of the tubular furnace is $L$. Rest of the parameters are simialar to the rectangular case above.
 
 \pagebreak
 \section{Exercises}
