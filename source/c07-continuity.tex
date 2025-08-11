@@ -339,7 +339,7 @@ From the figures, it is clear that uniform velocities lead to only translation o
 % -----------------------------------------------------------------------
 
 \begin{equation*}
-{\partial u_i \over \partial x_j} = 
+\varepsilon_{ij} = {\partial u_i \over \partial x_j} = 
 \left[
 \begin{array}{lll}
 {\partial u_1 \over \partial x_1} & {\partial u_1 \over \partial x_2} & {\partial u_1 \over \partial x_3} \\
@@ -376,6 +376,7 @@ Changes to a fluid element:
 Define rate of dilation as:
 $$ \Delta = \vec{\nabla} \cdot \vec{u} $$
 $$ \Delta = \text{Trace of} \, {\partial u_i \over \partial x_j} $$
+$$ \Delta = \varepsilon_{ii} = {\partial u_i \over \partial x_i} $$
 
 % -----------------------------------------------------------------------
 
@@ -500,20 +501,6 @@ $$ {\partial u_1 \over \partial x_1} + {\partial u_2 \over \partial x_2} = 0 $$
 \item Flow near corners
 \end{enumerate}
 
-
-% -----------------------------------------------------------------------------------
-
-
-\section{Summary}
-
-Continuity equation for incompressible flow in rectangular coordinate system is given as: 
-
-$$ {\partial u_x \over \partial x} + {\partial u_y \over \partial y} + {\partial u_z \over \partial z} = 0 $$
-
-Continuity equation for incompressible flow in cylindrical coordinate system is given as: 
-
-$$ {1 \over r} {\partial \left( r V_r \right) \over \partial r} +  {1 \over r} {\partial V_\theta \over \partial \theta} + {\partial V_z \over \partial z} = 0 $$
-
 % -----------------------------------------------------------------------
 
 \section{Exercises}
@@ -569,6 +556,35 @@ For an incompressible flow in the $r\theta$ plane, the $r$ component of velocity
 \item Watched any NCFMF videos on youtube? Watch one and write down what you have learned. 
 
 \item Have you watched the movie "twister"? Can you try and write down an equation that shows the velocity field of air in a twister?
+
+\end{enumerate}
+
+% -----------------------------------------------------------------------
+
+\section{Summary}
+
+\begin{enumerate}
+
+\item Continuity equation states the balance of mass in a differential form.
+ 
+\item Continuity equation for an incompressible fluid reduces to the divergence of velocity field being zero.
+
+\item Continuity equation can be used to validate a flow field, determine unknown components given the rest of those and to intepret flow profiles.
+
+\item Rate of dilation $\Delta$ corresponds to the trace of the strain rate tensor $\varepsilon_{ij} = \partial u_i / \partial x_j$. That is, $\Delta = \varepsilon_{ii} = \partial u_i / \partial x_i$.
+
+\item Continuity equation for incompressible flow in rectangular coordinate system is given as: 
+
+$$ {\partial u_x \over \partial x} + {\partial u_y \over \partial y} + {\partial u_z \over \partial z} = 0 $$
+
+\item Continuity equation for incompressible flow in cylindrical coordinate system is given as: 
+
+$$ {1 \over r} {\partial \left( r V_r \right) \over \partial r} +  {1 \over r} {\partial V_\theta \over \partial \theta} + {\partial V_z \over \partial z} = 0 $$
+
+\item Continuity equation for incompressible flow in spherical coordinate system is given as: 
+
+$$ \vec{\nabla} \cdot \vec{V} = {1 \over r^2} {\partial \over \partial r} \left( r^2 V_r \right) + {1 \over r \sin\theta} {\partial \over \partial \theta} \left( V_\theta \sin\theta \right) + {1 \over r \sin\theta} {\partial V_\phi \over \partial \phi} = 0 $$
+
 
 \end{enumerate}
 

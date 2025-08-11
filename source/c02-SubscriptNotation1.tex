@@ -340,7 +340,7 @@ Definition:
 $$ \epsilon_{ijk} = 
 \begin{array}{ll}
 1 & \mathrm{if}\  i,j,k \  \mathrm{appear \  cyclic} \\
--1 & \mathrm{if}\  i,j,k \  \mathrm{donot \ appear\ cyclic} \\
+-1 & \mathrm{if}\  i,j,k \  \mathrm{do \ not \ appear\ cyclic} \\
 0 & \mathrm{if}\ i=j \  \mathrm{or} \  j=k \ \mathrm{or} \  k=i  \\
 \end{array} $$
 
@@ -353,6 +353,10 @@ $$
 \epsilon_{333} = \epsilon_{331} = \epsilon_{133} =\epsilon_{313} = \epsilon_{332} = \epsilon_{233} = \epsilon_{323} = 0 \\
 \end{array}
 $$
+
+One can also write the permutation matrix as follows:
+
+$$ \epsilon_{ijk} = \frac{(i-j)(j-k)(k-i)}{2} $$
 
 Permutation matrix will help in writing expressions involving a cross product in a simplified manner.
 

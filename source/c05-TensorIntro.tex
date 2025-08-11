@@ -282,33 +282,49 @@ Use the Neumann's principle to prove that the number of components necessary to 
 {\bf \Large Tensor Properties}
 \end{center}
 
+%-----------------------------------------------------------------
+
+\begin{question}
+If $a_{ij}$ and $b_{ij}$ are two tensors of order 2, then write the order / rank and list the free indices for each of the following quantities.
+
+(1) $a_{ij} b_{jk}$ 
+(2) $a_{ij} b_{ik}$ 
+(3) $a_{ij} b_{kj}$ 
+(4) $a_{ij} b_{ij}$ 
+(5) $a_{ij} b_{ji}$ 
+(6) $a_{ji} b_{ij}$ 
+(7) $a_{ij} b_{ki}$ 
+(8) $a_{ij} b_{kl}$ 
+
+\end{question}
+\begin{solution}[print]
+The order of tensor and free indices are as follows:
+(1) 2, $i,k$
+(2) 2, $j,k$
+(3) 2, $i,k$
+(4) 0, no free indices
+(5) 0, no free indices
+(6) 0, no free indices
+(7) 2, $j,k$
+(8) 4, $i,j,k,l$
+
+\end{solution}
+
+%-----------------------------------------------------------------
+
+\begin{question}
+In the above list of expressions, which of the above qualifies as a matrix multiplication the way you knew it?
+\end{question}
+\begin{solution}[print]
+(1) $a_{ij} b_{jk}$ is matrix multiplication. The summation is over the second index $j$ of first matrix $a$ and first index $j$ of second matrix $b$. The output is a matrix of size given by first index $i$ of first matrix and second index $k$ of second matrix.
+\end{solution}
+
+%-----------------------------------------------------------------
+
+
 \begin{enumerate}{}{}
 
-\item If $a_{ij}$ and $b_{ij}$ are two tensors of order 2, then write the order / rank and list the free indices for each of the following quantities.
-
-\begin{tabular}{| c | c | m{1 in} | m{1 in} |}
-\hline
- Sl. & Expression & Order / Rank & Free Indices \\[1 cm]
-\hline
-1 & $a_{ij} b_{jk}$ & & \\[1 cm]
-\hline
-2 & $a_{ij} b_{ik}$ & & \\[1 cm]
-\hline
-3 & $a_{ij} b_{kj}$ & & \\[1 cm]
-\hline
-4 & $a_{ij} b_{ij}$ & & \\[1 cm]
-\hline
-5 & $a_{ij} b_{ji}$ & & \\[1 cm]
-\hline
-6 & $a_{ji} b_{ij}$ & & \\[1 cm]
-\hline
-7 & $a_{ij} b_{ki}$ & & \\[1 cm]
-\hline
-8 & $a_{ij} b_{kl}$ & & \\[1 cm]
-\hline
-\end{tabular}
-
-\item In the above list of expressions, which of the above qualifies as a matrix multiplication the way you knew it?
+\item 
 
 \item Consider the above expressions are contraction operations on $d_{ijkl}$ where $d_{ijkl} = a_{ij} b_{kl}$. List which expression is a contraction operation over which of the indices of $d$.
 
@@ -362,8 +378,9 @@ Give some examples here
 \section{Summary}
 
 \begin{enumerate}
-\item 
-\item 
+\item Tensors are defined by the way their elements are to change upon a coordinate rotation.
+\item Theorems on tensors allow us to interpret if a particular quantity in an expression is a tensor or not.
+\item Isotropic tensor is one whose elements do not change upon any arbitrary coordinate rotation. 
 \end{enumerate}
 
 % --------- end of TensorIntro.tex --------------------------------

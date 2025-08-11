@@ -403,6 +403,60 @@ $$ = \left( \vec{f} \cdot \vec{f} \right) \left( \vec{g} \cdot \vec{g} \right) -
 
 % -----------------------------------------------------------------------
 
+\begin{question}
+$$ \vec{a} \times \left( \vec{b} \times \vec{c} \right) = \beta \vec{b} + \gamma \vec{c} $$
+\end{question}
+\begin{solution}[print]
+
+$$ \vec{b} \times \vec{c} = \epsilon_{ijk} b_j c_k $$
+
+Choose the cylic indices as $ijklm$ to give two pairs of such indices namely $ijk$ and $lmi$. 
+
+$$ \vec{a} \times \left( \vec{b} \times \vec{c} \right) = \epsilon_{lmi} a_m \epsilon_{ijk} b_j c_k $$
+
+The free index of each term in the above expression is $l$. Simplify further as follows:
+
+$$ = \epsilon_{lmi} \epsilon_{ijk} a_m b_j c_k $$
+
+$$ = \left( \delta_{lj} \delta_{mk} - \delta_{lk} \delta_{jm} \right) a_m b_j c_k $$
+
+$$ = \delta_{lj} \delta_{mk} a_m b_j c_k - \delta_{lk} \delta_{jm} a_m b_j c_k $$
+
+$$ = a_k b_l c_k - a_j b_j c_l$$
+
+$$ = \beta b_l + \gamma c_l $$
+
+Where $\beta = \vec{a} \cdot \vec{c} $ and $\gamma = - \vec{b} \cdot \vec{a}$. This shows that the cross product $\vec{a} \times \left( \vec{b} \times \vec{c} \right)$ lies in the plane containing the vectors $\vec{b}$ and $\vec{a}$.
+
+\end{solution}
+
+% -----------------------------------------------------------------------
+
+\begin{question}
+For any vector $\vec{a}$ and a unit vector $\vec{e}$, show the following:
+$$ \vec{a} = \left( \vec{a} \cdot \vec{e} \right) \vec{e} + \vec{e} \times \left( \vec{a} \times \vec{e} \right) $$
+\end{question}
+\begin{solution}[print]
+
+$$ \vec{e} \times \left( \vec{a} \times \vec{e} \right) = \epsilon_{lmi} e_m \epsilon_{ijk} a_j e_k $$
+
+$$ = \left( \delta_{lj} \delta_{mk} - \delta_{lk} \delta_{jm} \right) e_m a_j e_k $$
+
+$$ = \delta_{lj} \delta_{mk} e_m a_j e_k - \delta_{lk} \delta_{jm} e_m a_j e_k $$
+
+$$ = e_m a_l e_m - a_m e_l e_m $$
+
+$$ = \vec{a} \left( \vec{e} \cdot \vec{e} \right) - \vec{e} \left( \vec{a} \cdot \vec{e} \right) $$
+
+Since $\vec{e}$ is a unit vector, $ \vec{e} \cdot \vec{e} = 1 $.
+
+This shows that any vector can be split in to two components, one along a unit vector and another perpendicular to that unit vector.
+
+\end{solution}
+
+% -----------------------------------------------------------------------
+
+
 \section{Summary}
 
 \begin{enumerate}
