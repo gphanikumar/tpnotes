@@ -374,14 +374,14 @@ What is the value of $\epsilon_{ijk} \epsilon_{ijk}$ ?
 
 \begin{question}
 Expand the following expressions separately and indicate the number of components and comment on the quantity.
-(a) $\epsilon_{ijk} u_j v_k$ 
-(b) $\epsilon_{ijk} u_{k,j}$ 
-(c) $\epsilon_{ijk} a_{1i} a_{2j} a_{3k}$
+(1) $\epsilon_{ijk} u_j v_k$ 
+(2) $\epsilon_{ijk} u_{k,j}$ 
+(3) $\epsilon_{ijk} a_{1i} a_{2j} a_{3k}$
 \end{question}
 \begin{solution}[print]
-(a) 1 free index, 3 components, vector, the quantity is cross product of $\vec{u}$ and $\vec{v}$
-(b) 1 free index, 3 components, vector, the quantity is curl of $\vec{u}$
-	(c) 0 free index, 1 component, scalar, the quantity is determinant of matrix $[a]$
+(1) 1 free index, 3 components, vector, the quantity is cross product of $\vec{u}$ and $\vec{v}$
+(2) 1 free index, 3 components, vector, the quantity is curl of $\vec{u}$
+(3) 0 free index, 1 component, scalar, the quantity is determinant of matrix $[a]$
 \end{solution}
 
 % -----------------------------------------------------------------
@@ -395,22 +395,19 @@ Convert an expression in vectorial notation to subscript notation
 % learning objective
 {\bf Utility of permutation matrix}:
 
+\begin{question}
 If you have discovered the utility of $\epsilon_{ijk}$ to write cross products, then write the following expressions in their equivalent subscript notation.
-
-\begin{tabular}{| c | m{2cm} | m{7 cm} |}
-\hline
-Vectorial Expression & free index & expression in subscript notation \\
-\hline
-$\vec{c} = \vec{a} \times \vec{b}$ & &\\[1cm]
-\hline
-$\vec{c} = \vec{\nabla} \times \vec{a}$ & &\\[1cm]
-\hline
-$\vec{c} \cdot \left( \vec{\nabla} \times \vec{a} \right)$ & &\\[1cm]
-\hline
-$\vec{c} \times \left( \vec{\nabla} \times \vec{a} \right)$ & &\\[1cm]
-\hline
-\end{tabular}
-
+	(1) $\vec{c} = \vec{a} \times \vec{b}$
+	(2) $\vec{c} = \vec{\nabla} \times \vec{a}$
+	(3) $\vec{c} \cdot \left( \vec{\nabla} \times \vec{a} \right)$
+	(4) $\vec{c} \times \left( \vec{\nabla} \times \vec{a} \right)$
+\end{question}
+\begin{solution}[print]
+(1) Choose $i$ as free index and write the expression as $c_i = \epsilon_{ijk} a_j b_k$
+(2) Similar to above, $c_i = \epsilon_{ijk} \nabla_j a_k $
+(3) $c_i \epsilon_{ijk} \nabla_j a_k $
+(4) Choose the $ijklm$ the two sets of indices in cyclic manner. $\epsilon_{lmi} c_m \epsilon_{ijk} \nabla_j a_k $
+\end{solution}
 
 Discuss with your neighbour and answer the following.
 
