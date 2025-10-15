@@ -111,7 +111,7 @@ can write:
 \label{rhokuk1}
 \boxed{
  {\partial \rho_k \over \partial t}  = - { \vnabla \cdot \left(\rho_k \vec{u}_k
-\right) } + \sum_{j=1}^{M}{\kappa_{jk}Q_j}
+\right) } + \sum_{j=1}^{R}{\kappa_{jk}Q_j}
 }
 \end{equation}
 
@@ -243,7 +243,9 @@ $$ -M \rho_k {\partial \mu \over \partial x} = - M \rho_k {\partial \mu \over \p
 
 Since composition can be related to atom fraction $X_k$ as 
 
-$$ \rho_k = X_k M_w $$ 
+$$ \rho_k \propto {X_k M_w \over V_m } $$ 
+
+The variation of log of the parameters will be equal as the rest of the parameters that are not function of location will be constants.
 
 $${\partial \mu \over \partial \ln \rho_k} = {\partial \mu \over \partial \ln X_k}$$
 
